@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starter Package — Whitsunday Web Studio</title>
+<meta name="description" content="The Starter package from Whitsunday Web Studio. A clean, professional 5-page website from $1,500. Perfect for new businesses and solo operators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/wws.css">
+<style>
+.package-hero{
+  background:var(--navy-mid);
+  padding:9rem 5% 5rem;
+  position:relative;overflow:hidden;
+}
+.package-hero::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--orange);
+}
+.package-hero::after{
+  content:'';position:absolute;
+  top:-60px;right:-60px;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(212,97,26,0.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.package-hero-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  position:relative;z-index:1;
+}
+.package-hero-tag{
+  display:inline-block;
+  background:rgba(212,97,26,0.15);
+  border:1px solid rgba(212,97,26,0.3);
+  color:var(--orange-tint);
+  font-size:0.72rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  padding:0.4rem 1rem;border-radius:20px;
+  margin-bottom:1.25rem;
+}
+.package-hero h1{
+  font-family:'Agdasima',sans-serif;
+  font-size:clamp(3rem,5vw,4.5rem);
+  color:var(--white);line-height:1.0;
+  margin-bottom:0.5rem;
+}
+.package-hero-sub{
+  font-size:1.05rem;color:var(--text-muted);
+  line-height:1.75;margin-bottom:2rem;
+}
+.package-price-block{
+  background:var(--navy);
+  border:2px solid rgba(255,255,255,0.08);
+  border-radius:12px;padding:2.5rem;
+}
+.package-price-label{
+  font-size:0.72rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:0.5rem;
+}
+.package-price-amount{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:3.5rem;font-weight:700;
+  color:var(--white);line-height:1;
+  margin-bottom:0.25rem;
+}
+.package-price-note{
+  font-size:0.82rem;color:var(--text-dim);
+  margin-bottom:2rem;line-height:1.5;
+}
+.package-includes{
+  list-style:none;padding:0;margin-bottom:2rem;
+}
+.package-includes li{
+  font-size:0.875rem;color:rgba(253,248,243,0.7);
+  padding:0.45rem 0;
+  display:flex;align-items:flex-start;
+  gap:0.65rem;line-height:1.5;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.package-includes li:last-child{border-bottom:none;}
+.package-includes li::before{
+  content:'';width:17px;height:17px;min-width:17px;
+  border-radius:50%;
+  background:rgba(212,97,26,0.1);
+  display:inline-flex;align-items:center;
+  justify-content:center;margin-top:1px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3 3 7-7' stroke='%23D4611A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+}
+
+/* DETAIL SECTIONS */
+.package-detail{background:var(--navy);padding:6rem 5%;}
+.package-detail-inner{max-width:1200px;margin:0 auto;}
+.detail-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3rem;margin-top:3rem;
+}
+.detail-card{
+  background:var(--navy-mid);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;padding:2rem;
+}
+.detail-card h3{
+  font-family:'Inter',sans-serif;
+  font-size:0.95rem;font-weight:600;
+  color:var(--white);margin-bottom:1rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.detail-card h3 svg{flex-shrink:0;}
+.detail-card ul{list-style:none;padding:0;}
+.detail-card ul li{
+  font-size:0.875rem;color:var(--text-muted);
+  padding:0.4rem 0;line-height:1.6;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  display:flex;align-items:flex-start;gap:0.65rem;
+}
+.detail-card ul li:last-child{border-bottom:none;}
+.detail-card ul li::before{
+  content:'';width:5px;height:5px;min-width:5px;
+  border-radius:50%;background:var(--orange);
+  margin-top:7px;flex-shrink:0;
+}
+
+/* WHAT WE NEED */
+.needs-section{background:var(--navy-mid);padding:6rem 5%;}
+.needs-inner{max-width:1200px;margin:0 auto;}
+.needs-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:3rem;
+}
+.need-card{
+  background:var(--navy);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;padding:1.75rem;
+}
+.need-num{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:1.5rem;font-weight:700;
+  color:rgba(212,97,26,0.3);
+  margin-bottom:0.75rem;display:block;
+}
+.need-card h3{
+  font-family:'Inter',sans-serif;
+  font-size:0.9rem;font-weight:600;
+  color:var(--white);margin-bottom:0.5rem;
+}
+.need-card p{
+  font-size:0.82rem;color:var(--text-muted);
+  line-height:1.65;margin:0;
+}
+.need-optional{
+  display:inline-block;
+  font-size:0.65rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-dim);
+  background:rgba(255,255,255,0.05);
+  padding:0.15rem 0.5rem;border-radius:10px;
+  margin-left:0.5rem;vertical-align:middle;
+}
+
+/* SIGNUP */
+.signup-section{background:var(--navy);padding:6rem 5%;}
+.signup-inner{
+  max-width:760px;margin:0 auto;
+  text-align:center;
+}
+.signup-inner h2{
+  font-family:'Agdasima',sans-serif;
+  font-size:clamp(2.2rem,4vw,3.2rem);
+  color:var(--white);margin-bottom:1rem;
+  line-height:1.1;
+}
+.signup-inner p{
+  font-size:0.95rem;color:var(--text-muted);
+  line-height:1.8;margin-bottom:2.5rem;
+}
+.signup-actions{
+  display:flex;gap:1rem;
+  justify-content:center;flex-wrap:wrap;
+  margin-bottom:1.5rem;
+}
+.btn-signup{
+  background:var(--orange);color:var(--white);
+  border:none;padding:1.1rem 2.5rem;
+  border-radius:4px;font-family:'Inter',sans-serif;
+  font-weight:600;font-size:1rem;cursor:pointer;
+  letter-spacing:0.03em;text-decoration:none;
+  display:inline-block;transition:background 0.2s,transform 0.15s;
+}
+.btn-signup:hover{background:#bf5516;transform:translateY(-2px);}
+.signup-note{
+  font-size:0.8rem;color:var(--text-dim);line-height:1.6;
+}
+.compare-link{
+  margin-top:2rem;
+  font-size:0.85rem;color:var(--text-dim);
+}
+.compare-link a{color:var(--orange-tint);text-decoration:none;}
+.compare-link a:hover{color:var(--off-white);}
+
+@media(max-width:900px){
+  .package-hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .detail-grid{grid-template-columns:1fr;}
+  .needs-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .needs-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="package-hero">
+  <div class="package-hero-inner">
+    <div>
+      <span class="package-hero-tag">Starter Package</span>
+      <h1>Get online.</h1>
+      <p class="package-hero-sub">Perfect for new businesses, solo operators, and small teams who need a clean, professional website that makes them look credible from day one.</p>
+      <a class="btn-signup" href="/free-quote.html?package=starter">Yes — sign me up for this package</a>
+    </div>
+    <div class="package-price-block">
+      <p class="package-price-label">Starting from</p>
+      <div class="package-price-amount">$1,500</div>
+      <p class="package-price-note">Final price confirmed after a free consultation. Every project is quoted individually.</p>
+      <ul class="package-includes">
+        <li>5 page website</li>
+        <li>Mobile responsive design</li>
+        <li>Contact form</li>
+        <li>Basic SEO setup</li>
+        <li>Google Business Profile setup</li>
+        <li>2 rounds of revisions</li>
+        <li>Handover training session</li>
+      </ul>
+      <a class="btn-signup" href="/free-quote.html?package=starter" style="width:100%;text-align:center;display:block;">Get started today</a>
+    </div>
+  </div>
+</section>
+
+<section class="package-detail">
+  <div class="package-detail-inner">
+    <p class="section-eyebrow">What you get</p>
+    <h2 class="section-heading">Everything in the Starter package, explained</h2>
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          5 page website
+        </h3>
+        <ul>
+          <li>Home, About, Services, Contact, and one additional page of your choice</li>
+          <li>Custom layout designed for your business</li>
+          <li>Consistent styling and branding throughout</li>
+          <li>Fast, clean code — no bloated page builders</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          Mobile responsive
+        </h3>
+        <ul>
+          <li>Looks great on every screen size — phone, tablet, desktop</li>
+          <li>Touch-friendly navigation and buttons</li>
+          <li>Tested across major browsers and devices</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact form
+        </h3>
+        <ul>
+          <li>Enquiry form that sends directly to your email</li>
+          <li>Spam-protected and reliable</li>
+          <li>Confirmation message for visitors after submission</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Basic SEO setup
+        </h3>
+        <ul>
+          <li>Page titles and meta descriptions written for every page</li>
+          <li>Google Search Console connected</li>
+          <li>XML sitemap submitted to Google</li>
+          <li>Image optimisation and alt text</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Google Business Profile
+        </h3>
+        <ul>
+          <li>Profile created and verified in your name</li>
+          <li>Business information completed and optimised</li>
+          <li>Linked correctly to your website</li>
+          <li>Photos uploaded and categorised</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Handover &amp; training
+        </h3>
+        <ul>
+          <li>Walkthrough session once the site is live</li>
+          <li>I show you how to make basic content updates yourself</li>
+          <li>Written reference guide provided</li>
+          <li>Available for questions after launch</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="needs-section">
+  <div class="needs-inner">
+    <p class="section-eyebrow">What I need from you</p>
+    <h2 class="section-heading">Before we get started</h2>
+    <p class="section-body">The more you can pull together before we begin, the faster and smoother the build. Don't worry if some of this isn't ready — we can work through it together.</p>
+    <div class="needs-grid">
+      <div class="need-card">
+        <span class="need-num">01</span>
+        <h3>Business details</h3>
+        <p>Your business name, address, phone number, email, ABN, and trading hours. The basics that appear across the site.</p>
+      </div>
+      <div class="need-card">
+        <span class="need-num">02</span>
+        <h3>Logo files <span class="need-optional">or we discuss options</span></h3>
+        <p>Your logo in PNG or SVG format, ideally with a transparent background. If you don't have one, let me know and we'll work something out.</p>
+      </div>
+      <div class="need-card">
+        <span class="need-num">03</span>
+        <h3>Brand colours &amp; fonts <span class="need-optional">if you have them</span></h3>
+        <p>Any existing colour palette or typography you use. If you don't have these, I'll develop something that suits your business.</p>
+      </div>
+      <div class="need-card">
+        <span class="need-num">04</span>
+        <h3>Photos</h3>
+        <p>Images of your business, products, team, or premises. Good photos make a huge difference. Phone shots are fine — I can work with what you have.</p>
+      </div>
+      <div class="need-card">
+        <span class="need-num">05</span>
+        <h3>Page content <span class="need-optional">or I can help</span></h3>
+        <p>The text for each page — what you do, your story, your services. If writing isn't your thing, I can draft copy based on our briefing conversation.</p>
+      </div>
+      <div class="need-card">
+        <span class="need-num">06</span>
+        <h3>Domain &amp; hosting access <span class="need-optional">if existing</span></h3>
+        <p>Login details for your domain registrar and hosting account if you already have them. If you're starting fresh, I'll help you set these up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signup-section">
+  <div class="signup-inner">
+    <h2>Ready to get your business online?</h2>
+    <p>Click below and I'll send you a free, itemised quote based on your specific needs. No obligation, no pressure — just a clear picture of what it will cost and what you'll get.</p>
+    <div class="signup-actions">
+      <a class="btn-signup" href="/free-quote.html?package=starter">Yes — sign me up for the Starter package</a>
+    </div>
+    <p class="signup-note">50% deposit to start · 2 rounds of revisions · Handover training included · No lock-in after delivery</p>
+    <div class="compare-link">
+      <p>Need more than 5 pages or want advanced SEO? <a href="/package-growth.html">See the Growth package →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-glow"></div>
+  <div class="cta-glow-left"></div>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Still have questions?</h2>
+      <p>No pressure, no jargon — just a friendly chat about your business.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn-primary" href="/contact.html">Ask Tony directly</a>
+      <a class="btn-ghost" href="/services.html">View all services</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="/wws-components.js"></script>
+</body>
+</html>
