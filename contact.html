@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Whitsunday Web Studio</title>
+<meta name="description" content="Get in touch with Whitsunday Web Studio. Based in Airlie Beach, serving businesses across the Whitsundays and North Queensland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/wws.css">
+<style>
+/* ============================================================
+   CONTACT PAGE SPECIFIC
+   ============================================================ */
+.contact-section{
+  background:var(--navy);
+  padding:7rem 5%;
+}
+.contact-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1.4fr;
+  gap:6rem;align-items:start;
+}
+
+/* LEFT COLUMN */
+.contact-info h2{
+  font-family:'Agdasima',sans-serif;
+  font-size:clamp(2rem,3vw,2.8rem);
+  color:var(--white);line-height:1.1;
+  margin-bottom:1rem;
+}
+.contact-info p{
+  font-size:0.95rem;color:var(--text-muted);
+  line-height:1.85;margin-bottom:2rem;
+}
+.contact-details{
+  display:flex;flex-direction:column;
+  gap:1.25rem;margin-bottom:3rem;
+}
+.contact-detail{
+  display:flex;align-items:flex-start;
+  gap:1rem;
+}
+.contact-detail-icon{
+  width:42px;height:42px;min-width:42px;
+  background:rgba(212,97,26,0.1);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-detail-text h4{
+  font-family:'Inter',sans-serif;
+  font-size:0.75rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:0.25rem;
+}
+.contact-detail-text a,
+.contact-detail-text p{
+  font-size:0.9rem;color:var(--text-muted);
+  text-decoration:none;line-height:1.5;
+  transition:color 0.2s;margin:0;
+}
+.contact-detail-text a:hover{color:var(--off-white);}
+
+.contact-availability{
+  background:var(--navy-mid);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;padding:1.75rem;
+}
+.contact-availability h4{
+  font-family:'Inter',sans-serif;
+  font-size:0.75rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:1rem;
+}
+.availability-row{
+  display:flex;justify-content:space-between;
+  align-items:center;padding:0.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  font-size:0.85rem;
+}
+.availability-row:last-child{border-bottom:none;}
+.availability-row .day{color:var(--text-muted);}
+.availability-row .time{color:var(--off-white);font-weight:500;}
+.availability-note{
+  margin-top:1rem;
+  font-size:0.78rem;color:var(--text-dim);
+  line-height:1.6;font-style:italic;
+}
+
+/* RIGHT COLUMN — FORM */
+.contact-form-wrap{
+  background:var(--navy-mid);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:12px;
+  padding:2.5rem;
+}
+.contact-form-wrap h3{
+  font-family:'Agdasima',sans-serif;
+  font-size:1.6rem;color:var(--white);
+  margin-bottom:0.5rem;
+}
+.contact-form-wrap p{
+  font-size:0.875rem;color:var(--text-muted);
+  line-height:1.6;margin-bottom:2rem;
+}
+.form-success{
+  display:none;
+  text-align:center;padding:3rem 1rem;
+}
+.form-success-icon{
+  width:64px;height:64px;
+  background:rgba(212,97,26,0.1);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;
+}
+.form-success h3{
+  font-family:'Agdasima',sans-serif;
+  font-size:1.8rem;color:var(--white);
+  margin-bottom:0.75rem;
+}
+.form-success p{
+  font-size:0.9rem;color:var(--text-muted);
+  line-height:1.7;margin-bottom:0;
+}
+
+/* FAQ */
+.contact-faq{
+  background:var(--navy-mid);
+  padding:6rem 5%;
+}
+.contact-faq-inner{max-width:800px;margin:0 auto;}
+.contact-faq-header{text-align:center;margin-bottom:3rem;}
+.faq-list{display:flex;flex-direction:column;gap:0;}
+.faq-item{
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.faq-question{
+  width:100%;background:transparent;border:none;
+  padding:1.5rem 0;
+  display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;text-align:left;gap:1rem;
+}
+.faq-question span{
+  font-family:'Inter',sans-serif;
+  font-size:0.95rem;font-weight:600;
+  color:var(--white);line-height:1.4;
+}
+.faq-icon{
+  width:24px;height:24px;min-width:24px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;
+  color:var(--orange);font-size:1rem;font-weight:300;
+}
+.faq-item.open .faq-icon{
+  background:var(--orange);
+  border-color:var(--orange);
+  color:var(--white);
+  transform:rotate(45deg);
+}
+.faq-answer{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.3s ease;
+}
+.faq-answer p{
+  font-size:0.875rem;color:var(--text-muted);
+  line-height:1.8;padding-bottom:1.5rem;
+  margin:0;
+}
+
+@media(max-width:900px){
+  .contact-inner{grid-template-columns:1fr;gap:3rem;}
+}
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="page-header-eyebrow">Let's talk</p>
+  <h1>Get in touch</h1>
+  <p>No obligation, no sales pitch. Just a conversation about what your business needs.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <!-- LEFT: Info -->
+    <div class="contact-info">
+      <h2>Happy to chat — however works for you.</h2>
+      <p>Whether you've got a specific project in mind or just want to explore your options, I'm always happy to have a conversation. Fill in the form, send an email, or just reach out directly.</p>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <h4>Email</h4>
+            <a href="mailto:info@whitsundaywebstudio.com">info@whitsundaywebstudio.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <h4>Location</h4>
+            <p>Airlie Beach, Queensland 4802<br>Serving the Whitsundays and North Queensland</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <h4>Response time</h4>
+            <p>I aim to respond to all enquiries within 24 hours on business days.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-availability">
+        <h4>Availability</h4>
+        <div class="availability-row">
+          <span class="day">Monday – Friday</span>
+          <span class="time">9am – 5pm AEST</span>
+        </div>
+        <div class="availability-row">
+          <span class="day">Saturday</span>
+          <span class="time">By arrangement</span>
+        </div>
+        <div class="availability-row">
+          <span class="day">Sunday</span>
+          <span class="time">Closed</span>
+        </div>
+        <p class="availability-note">I'm based in Airlie Beach and work on AEST. For urgent matters outside business hours, email is the best way to reach me.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="contact-form-wrap">
+      <h3>Send a message</h3>
+      <p>Tell me a bit about your business and what you're looking for. I'll get back to you within 24 hours.</p>
+
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Message sent.</h3>
+        <p>Thanks for reaching out. I'll be in touch within 24 hours on business days.</p>
+      </div>
+
+      <!-- 
+        FORMSPREE SETUP:
+        1. Sign up at formspree.io
+        2. Create a new form
+        3. Replace YOUR_FORM_ID below with your actual form ID
+        4. The form will submit and emails will arrive at info@whitsundaywebstudio.com
+      -->
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Tony Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="tony@yourbusiness.com.au" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business" placeholder="Your Business Name">
+        </div>
+        <div class="form-group">
+          <label for="subject">What's it about?</label>
+          <select id="subject" name="subject">
+            <option value="">Select an option</option>
+            <option value="new-website">I need a new website</option>
+            <option value="redesign">I want to redesign my existing site</option>
+            <option value="waas">I'm interested in WaaS</option>
+            <option value="seo">I need help with SEO</option>
+            <option value="maintenance">I need ongoing maintenance</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" placeholder="Tell me a bit about your business and what you're looking for..." required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary" style="width:100%;padding:1.1rem;font-size:1rem;">Send message</button>
+        </div>
+        <p class="form-note">Your information is kept private and never shared. I'll respond within 24 hours on business days.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="contact-faq">
+  <div class="contact-faq-inner">
+    <div class="contact-faq-header">
+      <p class="section-eyebrow">Common questions</p>
+      <h2 class="section-heading">Before you get in touch</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How much does a website cost?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>Starter websites begin from $1,500 and grow from there depending on scope. Every project is quoted individually — I don't believe in one-size-fits-all pricing. The best thing to do is tell me what you need and I'll give you a straight answer. You can also <a href="/services.html" style="color:var(--orange-tint);">view our packages</a> for a starting point.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How long does a website take to build?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>A standard 5-page website typically takes 2–4 weeks from deposit to launch. Larger builds take longer. The biggest variable is usually how quickly content — copy, photos, information — comes back from the client. The faster we can get that sorted, the faster your site goes live.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you work with businesses outside Airlie Beach?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — I work with businesses across the Whitsundays and North Queensland region. Most of the work is done remotely so geography isn't a barrier. I do prefer to meet face-to-face with Airlie Beach clients when practical, but it's not a requirement.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What do you need from me to get started?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>To get started I need a signed agreement, a 50% deposit, and a briefing session where we cover your goals, your brand, and your content. If you don't have content ready — copy, photos — we can work through that together. The more information you can give me upfront, the better the end result.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Will I be able to update the website myself?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Every build includes a handover session where I walk you through how to make basic updates yourself. If you'd prefer not to manage it yourself, that's what our maintenance arrangements and WaaS plans are for — I handle everything and you just send me what needs changing.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What's the payment structure?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>50% deposit required before work begins. The remaining 50% is due before the site goes live. For larger projects we may agree on milestone payments — this will be outlined clearly in your quote. No work begins without a deposit and no surprises at the end.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-glow"></div>
+  <div class="cta-glow-left"></div>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready for a proper quote?</h2>
+      <p>Fill in the quote request form and I'll come back with a clear, itemised proposal.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn-primary" href="/free-quote.html">Get a free quote</a>
+      <a class="btn-ghost" href="/services.html">View services</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="/wws-components.js"></script>
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// Form submission
+const form = document.getElementById('contactForm');
+const success = document.getElementById('formSuccess');
+if(form){
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method:'POST',
+        body:data,
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }
+    } catch(err){
+      console.error('Form error:', err);
+    }
+  });
+}
+</script>
+</body>
+</html>
