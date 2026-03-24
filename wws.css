@@ -214,7 +214,7 @@ body{
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:44px;height:1px;background:var(--orange-tint);opacity:0.55;}
 .hero-heading{
   font-family:'Agdasima',sans-serif;
-  font-size:clamp(3.4rem,7.5vw,5.8rem);
+  font-size:clamp(2.6rem,5.5vw,4.5rem);
   line-height:0.98;letter-spacing:0.01em;
   color:var(--white);margin-bottom:1.5rem;
   text-shadow:0 2px 48px rgba(10,31,61,0.4);
@@ -225,13 +225,33 @@ body{
   line-height:1.75;margin-bottom:2.75rem;
   max-width:520px;margin-left:auto;margin-right:auto;
 }
-.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.75rem;}
-.hero-trust{display:flex;align-items:center;justify-content:center;gap:2.25rem;flex-wrap:wrap;}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;}
+.hero-trust{display:flex;align-items:center;justify-content:center;gap:2.25rem;flex-wrap:wrap;margin-bottom:4rem;}
 .hero-trust-item{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:rgba(253,248,243,0.5);letter-spacing:0.02em;}
 .hero-trust-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0;}
-.scroll-hint{position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:0.5rem;animation:heroFadeUp 1s ease 1.2s both;}
-.scroll-hint span{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(253,248,243,0.3);}
-.scroll-arrow{width:1px;height:36px;background:linear-gradient(to bottom,var(--orange),transparent);}
+.scroll-hint{
+  position:absolute;
+  bottom:2.25rem;left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  animation:heroFadeUp 1s ease 1.2s both;
+}
+.scroll-hint span{
+  font-size:0.68rem;letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(253,248,243,0.3);
+}
+@keyframes scrollPulse{
+  0%{opacity:1;transform:scaleY(1);transform-origin:top;}
+  50%{opacity:0.4;transform:scaleY(0.4);transform-origin:top;}
+  100%{opacity:1;transform:scaleY(1);transform-origin:top;}
+}
+.scroll-arrow{
+  width:1px;height:36px;
+  background:linear-gradient(to bottom,var(--orange),transparent);
+  animation:scrollPulse 1.8s ease-in-out infinite;
+}
 
 /* ============================================================
    TRUST BAR
