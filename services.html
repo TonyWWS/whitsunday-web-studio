@@ -96,6 +96,47 @@
 .services-page{background:var(--navy);padding:7rem 5%;}
 .services-page-inner{max-width:1200px;margin:0 auto;}
 
+/* BENEFITS STRIP */
+.benefits-strip{
+  background:var(--navy-mid);
+  padding:3.5rem 5%;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.benefits-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1px 1fr 1px 1fr;
+  align-items:center;
+  gap:0;
+}
+.benefit-item{
+  display:flex;align-items:flex-start;
+  gap:1.25rem;padding:0 2.5rem;
+}
+.benefit-item:first-child{padding-left:0;}
+.benefit-item:last-child{padding-right:0;}
+.benefit-icon{
+  width:46px;height:46px;min-width:46px;
+  background:rgba(212,97,26,0.1);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.benefit-text h3{
+  font-family:'Inter',sans-serif;
+  font-size:0.95rem;font-weight:600;
+  color:var(--white);margin-bottom:0.35rem;
+}
+.benefit-text p{
+  font-size:0.82rem;color:var(--text-muted);
+  line-height:1.65;margin:0;
+}
+.benefit-divider{
+  width:1px;height:60px;
+  background:rgba(255,255,255,0.08);
+  margin:0 auto;
+}
+
 .service-block{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -458,6 +499,11 @@
   .maintenance-inner{grid-template-columns:1fr;gap:3rem;}
   .process-steps{grid-template-columns:1fr 1fr;gap:2.5rem;}
   .process-steps::before{display:none;}
+  .benefits-inner{grid-template-columns:1fr;gap:0;}
+  .benefit-divider{width:80%;height:1px;margin:1.5rem auto;}
+  .benefit-item{padding:1rem 0;}
+  .benefit-item:first-child{padding-left:0;}
+  .benefit-item:last-child{padding-right:0;}
 }
 @media(max-width:600px){
   .process-steps{grid-template-columns:1fr;}
@@ -483,8 +529,40 @@
   </div>
 </section>
 
-<!-- SERVICE BLOCKS -->
-<section class="services-page">
+<!-- BENEFITS STRIP -->
+<section class="benefits-strip">
+  <div class="benefits-inner">
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="benefit-text">
+        <h3>Fast turnaround</h3>
+        <p>Most projects completed in 2–4 weeks. No waiting months for something to launch.</p>
+      </div>
+    </div>
+    <div class="benefit-divider"></div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="benefit-text">
+        <h3>Local support</h3>
+        <p>Based in Airlie Beach. When you need help, you reach a real person who knows your business.</p>
+      </div>
+    </div>
+    <div class="benefit-divider"></div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="benefit-text">
+        <h3>Clear communication</h3>
+        <p>No jargon, no guessing. You'll always know where your project is and what's happening next.</p>
+      </div>
+    </div>
+  </div>
+</section>
   <div class="services-page-inner">
 
     <!-- Website Design -->
