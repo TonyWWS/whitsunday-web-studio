@@ -4,15 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services — Whitsunday Web Studio</title>
-<meta name="description" content="Web design, SEO, social media setup, Google Business Profile and WaaS services for small businesses in the Whitsundays and North Queensland.">
+<meta name="description" content="Web design, SEO, social media branding and Google Business Profile services for small businesses in the Whitsundays and North Queensland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/wws.css">
 <style>
-/* ============================================================
-   SERVICES PAGE SPECIFIC
-   ============================================================ */
 
 /* HERO */
 .services-hero{
@@ -36,464 +33,184 @@
 }
 .services-hero-overlay-gradient{
   position:absolute;inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(10,31,61,0.25) 0%,
-    rgba(10,31,61,0.05) 35%,
-    rgba(10,31,61,0.05) 55%,
-    rgba(10,31,61,0.80) 100%
-  );
+  background:linear-gradient(to bottom,rgba(10,31,61,0.25) 0%,rgba(10,31,61,0.05) 35%,rgba(10,31,61,0.05) 55%,rgba(10,31,61,0.80) 100%);
   z-index:2;
 }
-.services-hero-accent-top{
-  position:absolute;top:0;left:0;right:0;
-  height:3px;background:var(--orange);z-index:10;
-}
-.services-hero-accent-bottom{
-  position:absolute;bottom:0;left:0;right:0;
-  height:3px;background:var(--orange);z-index:10;
-}
-.services-hero-content{
-  position:relative;z-index:5;
-  max-width:760px;width:100%;
-}
-.services-hero-eyebrow{
-  font-size:0.7rem;font-weight:700;
-  letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--orange-tint);
-  margin-bottom:1rem;
-  font-family:'Inter',sans-serif;
-}
-.services-hero-heading{
-  font-family:'Agdasima',sans-serif;
-  font-size:clamp(2.8rem,5vw,4.2rem);
-  line-height:1.0;color:var(--white);
-  margin-bottom:1rem;
-}
-.services-hero-sub{
-  font-size:1rem;color:rgba(253,248,243,0.75);
-  line-height:1.75;max-width:520px;
-  margin:0 auto;
-  font-family:'Inter',sans-serif;
-}
-
-/* SERVICE PHOTO */
-.service-visual-photo{
-  border-radius:10px;
-  overflow:hidden;
-  border:2px solid rgba(212,97,26,0.3);
-  aspect-ratio:4/3;
-}
-.service-visual-photo img{
-  width:100%;height:100%;
-  object-fit:cover;display:block;
-  transition:transform 0.4s ease;
-}
-.service-visual-photo:hover img{
-  transform:scale(1.03);
-}
-
-.services-page{background:var(--navy);padding:7rem 5%;}
-.services-page-inner{max-width:1200px;margin:0 auto;}
+.services-hero-accent-top{position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);z-index:10;}
+.services-hero-accent-bottom{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);z-index:10;}
+.services-hero-content{position:relative;z-index:5;max-width:760px;width:100%;}
+.services-hero-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange-tint);margin-bottom:1rem;font-family:'Inter',sans-serif;}
+.services-hero-heading{font-family:'Agdasima',sans-serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.0;color:var(--white);margin-bottom:1rem;}
+.services-hero-sub{font-size:1rem;color:rgba(253,248,243,0.75);line-height:1.75;max-width:520px;margin:0 auto;font-family:'Inter',sans-serif;}
 
 /* BENEFITS STRIP */
-.benefits-strip{
-  background:var(--navy-mid);
-  padding:3.5rem 5%;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-}
-.benefits-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1px 1fr 1px 1fr;
-  align-items:center;
-  gap:0;
-}
-.benefit-item{
-  display:flex;align-items:flex-start;
-  gap:1.25rem;padding:0 2.5rem;
-}
+.benefits-strip{background:var(--navy-mid);padding:3.5rem 5%;border-bottom:1px solid rgba(255,255,255,0.06);}
+.benefits-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;align-items:center;}
+.benefit-item{display:flex;align-items:flex-start;gap:1.25rem;padding:0 2.5rem;}
 .benefit-item:first-child{padding-left:0;}
 .benefit-item:last-child{padding-right:0;}
-.benefit-icon{
-  width:46px;height:46px;min-width:46px;
-  background:rgba(212,97,26,0.1);
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  margin-top:2px;
-}
-.benefit-text h3{
-  font-family:'Inter',sans-serif;
-  font-size:0.95rem;font-weight:600;
-  color:var(--white);margin-bottom:0.35rem;
-}
-.benefit-text p{
-  font-size:0.82rem;color:var(--text-muted);
-  line-height:1.65;margin:0;
-}
-.benefit-divider{
-  width:1px;height:60px;
-  background:rgba(255,255,255,0.08);
-  margin:0 auto;
-}
+.benefit-icon{width:46px;height:46px;min-width:46px;background:rgba(212,97,26,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.benefit-text h3{font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.35rem;}
+.benefit-text p{font-size:0.82rem;color:var(--text-muted);line-height:1.65;margin:0;}
+.benefit-divider{width:1px;height:60px;background:rgba(255,255,255,0.08);margin:0 auto;}
 
+/* SERVICE BLOCKS */
 .service-block{
+  padding:6rem 5%;
+}
+.service-block-inner{
+  max-width:1200px;margin:0 auto;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:5rem;
   align-items:center;
-  padding:5rem 0;
-  border-bottom:1px solid rgba(255,255,255,0.06);
 }
-.service-block:last-child{border-bottom:none;}
-.service-block.reverse{direction:rtl;}
-.service-block.reverse > *{direction:ltr;}
+.service-block.navy{background:var(--navy);}
+.service-block.navy-mid{background:var(--navy-mid);}
+.service-block.reverse .service-block-inner .service-content{order:2;}
+.service-block.reverse .service-block-inner .service-visual-wrap{order:1;}
 
-.service-block-icon{
-  width:64px;height:64px;
-  background:rgba(212,97,26,0.1);
-  border-radius:50%;
-  display:flex;align-items:center;
-  justify-content:center;
-  margin-bottom:1.5rem;
-}
-.service-block h2{
-  font-family:'Agdasima',sans-serif;
-  font-size:clamp(2rem,3vw,2.6rem);
-  color:var(--white);
-  line-height:1.1;margin-bottom:1rem;
-}
-.service-block p{
-  font-size:0.95rem;color:var(--text-muted);
-  line-height:1.85;margin-bottom:1.5rem;
-}
-.service-includes{
-  list-style:none;padding:0;
-  margin-bottom:2rem;
-}
-.service-includes li{
-  font-size:0.875rem;color:rgba(253,248,243,0.7);
-  padding:0.4rem 0;
-  display:flex;align-items:flex-start;
-  gap:0.65rem;line-height:1.5;
-}
-.service-includes li::before{
-  content:'';width:17px;height:17px;min-width:17px;
-  border-radius:50%;
-  background:rgba(212,97,26,0.1);
-  display:inline-flex;align-items:center;
-  justify-content:center;margin-top:1px;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3 3 7-7' stroke='%23D4611A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:center;
-}
-.service-visual{
-  background:var(--navy-mid);
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.06);
-  padding:3rem;
-  display:flex;align-items:center;
-  justify-content:center;
+.service-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;font-family:'Inter',sans-serif;}
+.service-block h2{font-family:'Agdasima',sans-serif;font-size:clamp(2rem,3vw,2.8rem);color:var(--white);line-height:1.1;margin-bottom:1.25rem;}
+.service-block p{font-size:0.95rem;color:var(--text-muted);line-height:1.85;margin-bottom:1.25rem;}
+.service-block p:last-of-type{margin-bottom:2rem;}
+
+.service-visual-wrap{
+  border-radius:10px;
+  overflow:hidden;
+  border:2px solid rgba(212,97,26,0.25);
   aspect-ratio:4/3;
+  position:relative;
+}
+.service-visual-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+  transition:transform 0.4s ease;
+}
+.service-visual-wrap:hover img{transform:scale(1.03);}
+
+/* GBP ANIMATED PIN */
+.gbp-visual{
+  width:100%;height:100%;
+  display:flex;align-items:center;
+  justify-content:center;
+  background:var(--navy);
   position:relative;
   overflow:hidden;
 }
-.service-visual::before{
+.gbp-visual::before{
   content:'';position:absolute;
-  top:-40px;right:-40px;
-  width:200px;height:200px;
-  background:radial-gradient(circle,rgba(212,97,26,0.15) 0%,transparent 70%);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(66,133,244,0.08) 0%,transparent 70%);
 }
-.service-visual-inner{
-  text-align:center;position:relative;z-index:1;
+.gbp-map-bg{
+  position:absolute;inset:0;
+  opacity:0.06;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.3) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.3) 1px,transparent 1px);
+  background-size:40px 40px;
 }
-.service-visual svg{opacity:0.15;margin-bottom:1.5rem;}
-.service-visual-label{
-  font-family:'Agdasima',sans-serif;
-  font-size:1.4rem;color:rgba(253,248,243,0.2);
-  letter-spacing:0.05em;
+.gbp-pin-wrap{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+  align-items:center;
+  animation:pinFloat 3s ease-in-out infinite;
+}
+@keyframes pinFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+.gbp-pin-shadow{
+  width:24px;height:8px;
+  background:rgba(0,0,0,0.3);
+  border-radius:50%;
+  margin-top:4px;
+  animation:shadowPulse 3s ease-in-out infinite;
+}
+@keyframes shadowPulse{
+  0%,100%{transform:scaleX(1);opacity:0.3;}
+  50%{transform:scaleX(0.6);opacity:0.15;}
+}
+.gbp-pin-dots{
+  display:flex;gap:6px;
+  margin-top:1.5rem;
+}
+.gbp-dot{
+  width:8px;height:8px;border-radius:50%;
+  animation:dotPulse 2s ease-in-out infinite;
+}
+.gbp-dot:nth-child(1){background:#4285F4;animation-delay:0s;}
+.gbp-dot:nth-child(2){background:#EA4335;animation-delay:0.2s;}
+.gbp-dot:nth-child(3){background:#FBBC05;animation-delay:0.4s;}
+.gbp-dot:nth-child(4){background:#34A853;animation-delay:0.6s;}
+@keyframes dotPulse{
+  0%,100%{transform:scale(1);opacity:0.7;}
+  50%{transform:scale(1.4);opacity:1;}
 }
 
-/* PRICING TABLE */
-.pricing-section{background:var(--off-white);padding:7rem 5%;}
-.pricing-inner{max-width:1200px;margin:0 auto;}
-.pricing-header{text-align:center;margin-bottom:4rem;}
-.pricing-table{
-  width:100%;border-collapse:collapse;
-  background:var(--white);
-  border-radius:12px;overflow:hidden;
-  box-shadow:0 4px 40px rgba(10,31,61,0.08);
-}
-.pricing-table th{
-  background:var(--navy);color:var(--off-white);
-  font-family:'Inter',sans-serif;
-  font-size:0.8rem;font-weight:600;
-  letter-spacing:0.08em;text-transform:uppercase;
-  padding:1.25rem 1.5rem;text-align:left;
-}
-.pricing-table th:not(:first-child){text-align:center;}
-.pricing-table th.featured-col{background:var(--orange);}
-.pricing-table td{
-  padding:1rem 1.5rem;
-  font-family:'Inter',sans-serif;
-  font-size:0.875rem;
-  color:rgba(10,31,61,0.75);
-  border-bottom:1px solid rgba(10,31,61,0.06);
-}
-.pricing-table td:not(:first-child){text-align:center;}
-.pricing-table tr:last-child td{border-bottom:none;}
-.pricing-table tr:hover td{background:rgba(10,31,61,0.02);}
-.check{color:var(--orange);font-size:1.1rem;font-weight:700;}
-.dash{color:rgba(10,31,61,0.2);}
-.pricing-table .price-row td{
-  padding:1.5rem;
-  font-family:'Agdasima',sans-serif;
-  font-size:1.6rem;color:var(--navy);
-  border-bottom:2px solid rgba(10,31,61,0.1);
-}
-.pricing-table .price-row td:first-child{
-  font-family:'Inter',sans-serif;
-  font-size:0.75rem;font-weight:700;
-  letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--orange);
-}
-.pricing-table .cta-row td{padding:1.5rem;border-bottom:none;}
-
-/* WAAS SECTION */
+/* WAAS */
 .waas-section{background:var(--navy-mid);padding:7rem 5%;}
 .waas-inner{max-width:1200px;margin:0 auto;}
 .waas-header{text-align:center;margin-bottom:1.5rem;}
-.waas-intro{
-  max-width:680px;margin:0 auto 4rem;
-  text-align:center;
-}
-.waas-intro p{
-  font-size:0.95rem;color:var(--text-muted);
-  line-height:1.85;margin-bottom:1rem;
-}
-.waas-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
-  margin-bottom:3rem;
-}
-.waas-card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:12px;
-  padding:2.25rem;
-  position:relative;
-  transition:border-color 0.2s,transform 0.2s;
-}
-.waas-card:hover{
-  border-color:rgba(212,97,26,0.4);
-  transform:translateY(-3px);
-}
-.waas-card.featured{
-  background:rgba(212,97,26,0.06);
-  border-color:var(--orange);
-  border-width:2px;
-}
-.waas-badge{
-  position:absolute;top:-14px;left:50%;
-  transform:translateX(-50%);
-  background:var(--orange);color:var(--white);
-  font-family:'Inter',sans-serif;
-  font-size:0.68rem;font-weight:700;
-  letter-spacing:0.12em;text-transform:uppercase;
-  padding:0.3rem 1.1rem;border-radius:20px;
-  white-space:nowrap;
-}
-.waas-tier{
-  font-family:'Inter',sans-serif;
-  font-size:0.72rem;font-weight:700;
-  letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:0.4rem;
-}
-.waas-name{
-  font-family:'Agdasima',sans-serif;
-  font-size:1.9rem;color:var(--white);
-  margin-bottom:0.25rem;line-height:1.05;
-}
-.waas-price{
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-size:2rem;font-weight:700;
-  color:var(--white);line-height:1;
-  margin-bottom:0.25rem;
-}
-.waas-price span{
-  font-family:'Inter',sans-serif;
-  font-size:0.85rem;font-weight:400;
-  color:var(--text-muted);
-}
-.waas-ideal{
-  font-size:0.8rem;color:var(--text-dim);
-  margin-bottom:1.5rem;font-style:italic;
-}
-.waas-divider{
-  border:none;border-top:1px solid rgba(255,255,255,0.08);
-  margin-bottom:1.5rem;
-}
-.waas-features{
-  list-style:none;padding:0;margin-bottom:2rem;
-}
-.waas-features li{
-  font-size:0.85rem;color:rgba(253,248,243,0.65);
-  padding:0.4rem 0;
-  display:flex;align-items:flex-start;
-  gap:0.65rem;line-height:1.5;
-}
-.waas-features li::before{
-  content:'';width:17px;height:17px;min-width:17px;
-  border-radius:50%;
-  background:rgba(212,97,26,0.1);
-  display:inline-flex;align-items:center;
-  justify-content:center;margin-top:1px;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3 3 7-7' stroke='%23D4611A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:center;
-}
-.btn-waas-ghost{
-  width:100%;padding:0.9rem;border-radius:4px;
-  font-family:'Inter',sans-serif;font-weight:600;
-  font-size:0.875rem;cursor:pointer;
-  letter-spacing:0.03em;transition:all 0.2s;
-  text-align:center;display:block;
-  text-decoration:none;
-  background:transparent;
-  color:rgba(253,248,243,0.7);
-  border:1.5px solid rgba(255,255,255,0.15);
-}
-.btn-waas-ghost:hover{
-  border-color:var(--orange);
-  color:var(--orange);
-}
-.btn-waas-solid{
-  width:100%;padding:0.9rem;border-radius:4px;
-  font-family:'Inter',sans-serif;font-weight:600;
-  font-size:0.875rem;cursor:pointer;
-  letter-spacing:0.03em;transition:all 0.2s;
-  text-align:center;display:block;
-  text-decoration:none;
-  background:var(--orange);color:var(--white);
-  border:1.5px solid var(--orange);
-}
+.waas-intro{max-width:680px;margin:0 auto 4rem;text-align:center;}
+.waas-intro p{font-size:0.95rem;color:var(--text-muted);line-height:1.85;margin-bottom:1rem;}
+.waas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
+.waas-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2.25rem;position:relative;transition:border-color 0.2s,transform 0.2s;}
+.waas-card:hover{border-color:rgba(212,97,26,0.4);transform:translateY(-3px);}
+.waas-card.featured{background:rgba(212,97,26,0.06);border-color:var(--orange);border-width:2px;}
+.waas-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--orange);color:var(--white);font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 1.1rem;border-radius:20px;white-space:nowrap;}
+.waas-tier{font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:0.4rem;}
+.waas-name{font-family:'Agdasima',sans-serif;font-size:1.9rem;color:var(--white);margin-bottom:0.25rem;line-height:1.05;}
+.waas-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:0.25rem;}
+.waas-price span{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:400;color:var(--text-muted);}
+.waas-ideal{font-size:0.8rem;color:var(--text-dim);margin-bottom:1.5rem;font-style:italic;}
+.waas-divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin-bottom:1.5rem;}
+.waas-features{list-style:none;padding:0;margin-bottom:2rem;}
+.waas-features li{font-size:0.85rem;color:rgba(253,248,243,0.65);padding:0.4rem 0;display:flex;align-items:flex-start;gap:0.65rem;line-height:1.5;}
+.waas-features li::before{content:'';width:17px;height:17px;min-width:17px;border-radius:50%;background:rgba(212,97,26,0.1);display:inline-flex;align-items:center;justify-content:center;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3 3 7-7' stroke='%23D4611A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;}
+.btn-waas-ghost{width:100%;padding:0.9rem;border-radius:4px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;cursor:pointer;letter-spacing:0.03em;transition:all 0.2s;text-align:center;display:block;text-decoration:none;background:transparent;color:rgba(253,248,243,0.7);border:1.5px solid rgba(255,255,255,0.15);}
+.btn-waas-ghost:hover{border-color:var(--orange);color:var(--orange);}
+.btn-waas-solid{width:100%;padding:0.9rem;border-radius:4px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;cursor:pointer;letter-spacing:0.03em;transition:all 0.2s;text-align:center;display:block;text-decoration:none;background:var(--orange);color:var(--white);border:1.5px solid var(--orange);}
 .btn-waas-solid:hover{background:#bf5516;color:var(--white);}
-.waas-onboarding{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:10px;
-  padding:2rem 2.5rem;
-  display:flex;align-items:center;
-  justify-content:space-between;
-  gap:2rem;flex-wrap:wrap;
-}
-.waas-onboarding-text h4{
-  font-family:'Inter',sans-serif;
-  font-size:1rem;font-weight:600;
-  color:var(--white);margin-bottom:0.4rem;
-}
-.waas-onboarding-text p{
-  font-size:0.875rem;color:var(--text-muted);
-  line-height:1.6;max-width:560px;
-}
-.waas-onboarding-price{
-  flex-shrink:0;text-align:center;
-}
-.waas-onboarding-price .amount{
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-size:1.8rem;font-weight:700;
-  color:var(--orange);display:block;
-}
-.waas-onboarding-price .label{
-  font-size:0.75rem;color:var(--text-dim);
-  letter-spacing:0.06em;text-transform:uppercase;
-}
-.waas-note{
-  text-align:center;margin-top:1.5rem;
-  font-size:0.8rem;color:var(--text-dim);
-  line-height:1.6;
-}
+.waas-onboarding{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.waas-onboarding-text h4{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.4rem;}
+.waas-onboarding-text p{font-size:0.875rem;color:var(--text-muted);line-height:1.6;max-width:560px;}
+.waas-onboarding-price{flex-shrink:0;text-align:center;}
+.waas-onboarding-price .amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:700;color:var(--orange);display:block;}
+.waas-onboarding-price .label{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.06em;text-transform:uppercase;}
+.waas-note{text-align:center;margin-top:1.5rem;font-size:0.8rem;color:var(--text-dim);line-height:1.6;}
 
 /* MAINTENANCE */
 .maintenance-section{background:var(--navy);padding:5rem 5%;}
-.maintenance-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:5rem;align-items:center;
-}
-.maintenance-content h2{
-  font-family:'Agdasima',sans-serif;
-  font-size:clamp(2rem,3vw,2.6rem);
-  color:var(--white);line-height:1.1;margin-bottom:1rem;
-}
-.maintenance-content p{
-  font-size:0.95rem;color:var(--text-muted);
-  line-height:1.85;margin-bottom:1.5rem;
-}
-.maintenance-card{
-  background:var(--navy-mid);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:12px;padding:2.5rem;
-}
-.maintenance-card h3{
-  font-family:'Agdasima',sans-serif;
-  font-size:1.6rem;color:var(--white);
-  margin-bottom:0.5rem;
-}
-.maintenance-card p{
-  font-size:0.875rem;color:var(--text-muted);
-  line-height:1.7;margin-bottom:1.5rem;
-}
-.maintenance-card ul{
-  list-style:none;padding:0;margin-bottom:2rem;
-}
-.maintenance-card ul li{
-  font-size:0.875rem;color:rgba(253,248,243,0.65);
-  padding:0.4rem 0;display:flex;
-  align-items:flex-start;gap:0.65rem;line-height:1.5;
-}
-.maintenance-card ul li::before{
-  content:'';width:17px;height:17px;min-width:17px;
-  border-radius:50%;background:rgba(212,97,26,0.1);
-  display:inline-flex;align-items:center;
-  justify-content:center;margin-top:1px;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3 3 7-7' stroke='%23D4611A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:center;
-}
+.maintenance-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.maintenance-content h2{font-family:'Agdasima',sans-serif;font-size:clamp(2rem,3vw,2.6rem);color:var(--white);line-height:1.1;margin-bottom:1rem;}
+.maintenance-content p{font-size:0.95rem;color:var(--text-muted);line-height:1.85;margin-bottom:1.5rem;}
+.maintenance-card{background:var(--navy-mid);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:2.5rem;}
+.maintenance-card h3{font-family:'Agdasima',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:0.5rem;}
+.maintenance-card p{font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.5rem;}
+.maintenance-card ul{list-style:none;padding:0;margin-bottom:2rem;}
+.maintenance-card ul li{font-size:0.875rem;color:rgba(253,248,243,0.65);padding:0.4rem 0;display:flex;align-items:flex-start;gap:0.65rem;line-height:1.5;}
+.maintenance-card ul li::before{content:'';width:17px;height:17px;min-width:17px;border-radius:50%;background:rgba(212,97,26,0.1);display:inline-flex;align-items:center;justify-content:center;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3 3 7-7' stroke='%23D4611A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;}
 
 /* PROCESS */
 .process-section{background:var(--navy-mid);padding:7rem 5%;}
 .process-inner{max-width:1200px;margin:0 auto;}
 .process-header{text-align:center;margin-bottom:4rem;}
-.process-steps{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:2rem;position:relative;
-}
-.process-steps::before{
-  content:'';position:absolute;
-  top:28px;left:10%;right:10%;
-  height:1px;background:rgba(212,97,26,0.3);z-index:0;
-}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:rgba(212,97,26,0.3);z-index:0;}
 .process-step{text-align:center;position:relative;z-index:1;}
-.step-number{
-  width:56px;height:56px;border-radius:50%;
-  background:var(--navy);border:2px solid var(--orange);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1.25rem;
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-size:1.1rem;font-weight:700;color:var(--orange);
-}
-.process-step h3{
-  font-family:'Inter',sans-serif;
-  font-size:0.95rem;font-weight:600;
-  color:var(--white);margin-bottom:0.5rem;
-}
-.process-step p{
-  font-size:0.82rem;color:var(--text-muted);line-height:1.6;
-}
+.step-number{width:56px;height:56px;border-radius:50%;background:var(--navy);border:2px solid var(--orange);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--orange);}
+.process-step h3{font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.5rem;}
+.process-step p{font-size:0.82rem;color:var(--text-muted);line-height:1.6;}
 
+/* RESPONSIVE */
 @media(max-width:900px){
-  .service-block{grid-template-columns:1fr;gap:3rem;}
-  .service-block.reverse{direction:ltr;}
+  .service-block-inner{grid-template-columns:1fr;gap:3rem;}
+  .service-block.reverse .service-block-inner .service-content{order:1;}
+  .service-block.reverse .service-block-inner .service-visual-wrap{order:2;}
   .waas-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto 3rem;}
   .waas-onboarding{flex-direction:column;text-align:center;}
   .maintenance-inner{grid-template-columns:1fr;gap:3rem;}
@@ -502,20 +219,16 @@
   .benefits-inner{grid-template-columns:1fr;gap:0;}
   .benefit-divider{width:80%;height:1px;margin:1.5rem auto;}
   .benefit-item{padding:1rem 0;}
-  .benefit-item:first-child{padding-left:0;}
-  .benefit-item:last-child{padding-right:0;}
 }
 @media(max-width:600px){
   .process-steps{grid-template-columns:1fr;}
-  .pricing-table{font-size:0.8rem;}
 }
 </style>
 </head>
 <body>
-
 <div id="nav-placeholder"></div>
 
-<!-- SERVICES HERO -->
+<!-- HERO -->
 <section class="services-hero">
   <div class="services-hero-img"></div>
   <div class="services-hero-overlay-base"></div>
@@ -563,164 +276,94 @@
     </div>
   </div>
 </section>
-  <div class="services-page-inner">
 
-    <!-- Website Design -->
-    <div class="service-block" id="website-design">
-      <div class="service-content">
-        <div class="service-block-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <p class="section-eyebrow">Core service</p>
-        <h2>Website Design &amp; Development</h2>
-        <p>A website that looks great on every device and actually works for your business. Not a template thrown together in an afternoon — a considered, purposeful build that reflects your brand and converts visitors into enquiries.</p>
-        <p>I build on the right platform for your needs. Every build is mobile-first, SEO-ready, and built to last. And because I've spent 20 years in hospitality, I know what a café or tour operator actually needs from a website — not just what looks good in a demo.</p>
-        <ul class="service-includes">
-          <li>Custom design matched to your brand</li>
-          <li>Mobile-first, fully responsive</li>
-          <li>Fast load times and clean code</li>
-          <li>Contact forms and enquiry handling</li>
-          <li>Booking widget integration (OpenTable, ResDiary, Amelia)</li>
-          <li>Basic on-page SEO included</li>
-          <li>Training so you can manage it yourself</li>
-          <li>2 rounds of revisions included</li>
-        </ul>
-        <a class="btn-primary" href="/free-quote.html">Get a quote</a>
-      </div>
-      <div class="service-visual-photo">
-        <img src="/website-design.jpg" alt="Website design work by Whitsunday Web Studio">
-      </div>
-    <div class="service-block reverse" id="seo">
-      <div class="service-content">
-        <div class="service-block-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <p class="section-eyebrow">Get found</p>
-        <h2>SEO Optimisation</h2>
-        <p>97% of people check a business online before they visit. If you're not showing up in Google when someone searches for what you do in the Whitsundays, you're invisible to them.</p>
-        <p>I set up your site correctly from the start — the right keywords, the right structure, the right technical foundations. No black-hat tricks, no guarantees of page one overnight. Just honest, sustainable SEO that builds over time.</p>
-        <ul class="service-includes">
-          <li>Keyword research for your local market</li>
-          <li>On-page SEO for every page</li>
-          <li>Google Search Console setup</li>
-          <li>Sitemap and robots.txt configuration</li>
-          <li>Page speed optimisation</li>
-          <li>Local SEO for Whitsundays searches</li>
-        </ul>
-        <a class="btn-outline" href="/free-quote.html">Get a quote</a>
-      </div>
-      <div class="service-visual">
-        <div class="service-visual-inner">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FDF8F3" stroke-width="1"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <div class="service-visual-label">SEO Optimisation</div>
-        </div>
-      </div>
+<!-- WEBSITE DESIGN -->
+<div class="service-block navy" id="website-design">
+  <div class="service-block-inner">
+    <div class="service-content">
+      <p class="service-eyebrow">Core service</p>
+      <h2>Website Design &amp; Development</h2>
+      <p>Your website is your hardest working team member — it's open 24 hours a day, seven days a week, and it's usually the first impression a potential customer has of your business. It needs to look the part.</p>
+      <p>I build clean, fast, mobile-first websites designed around what your customers actually need — whether that's finding your menu, making a booking, or picking up the phone. Because I've spent 20 years in hospitality and tourism, I understand what drives customers to act and what sends them elsewhere.</p>
+      <p>Every build is purposeful, professionally coded, and built to work as hard as you do. Three packages to suit every stage of business growth — from getting online for the first time to a complete digital presence.</p>
+      <a class="btn-primary" href="/free-quote.html">Get a quote</a>
     </div>
-
-    <!-- Social Media -->
-    <div class="service-block" id="social-media">
-      <div class="service-content">
-        <div class="service-block-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </div>
-        <p class="section-eyebrow">Build presence</p>
-        <h2>Social Media Branding</h2>
-        <p>Your social profiles are often the first thing a potential customer sees before they even visit your website. A half-finished Facebook page with a blurry logo and no contact details sends the wrong message.</p>
-        <p>I set up your profiles properly — consistent branding, complete information, linked correctly to your website. You get a professional presence across the platforms that matter for your business.</p>
-        <ul class="service-includes">
-          <li>Facebook Business Page setup and optimisation</li>
-          <li>Instagram Business profile setup</li>
-          <li>Consistent branding across platforms</li>
-          <li>Profile and cover image design</li>
-          <li>Bio and business information completed</li>
-          <li>Links correctly configured to your website</li>
-        </ul>
-        <a class="btn-outline" href="/free-quote.html">Get a quote</a>
-      </div>
-      <div class="service-visual">
-        <div class="service-visual-inner">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FDF8F3" stroke-width="1"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          <div class="service-visual-label">Social Media Branding</div>
-        </div>
-      </div>
+    <div class="service-visual-wrap">
+      <img src="/website-design.jpg" alt="Website design by Whitsunday Web Studio">
     </div>
-
-    <!-- Google Business Profile -->
-    <div class="service-block reverse" id="google-business">
-      <div class="service-content">
-        <div class="service-block-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <p class="section-eyebrow">Local search</p>
-        <h2>Google Business Profile</h2>
-        <p>When someone searches "café Airlie Beach" or "tour operator Whitsundays", the businesses that appear in the map pack get the calls. A properly optimised Google Business Profile is one of the most powerful free tools available to local businesses — and most aren't using it properly.</p>
-        <p>I set it up right, verify it, optimise it with the right categories and keywords, and make sure your business information is complete and consistent.</p>
-        <ul class="service-includes">
-          <li>Profile creation and verification</li>
-          <li>Category and keyword optimisation</li>
-          <li>Business hours and contact details</li>
-          <li>Photo upload and optimisation</li>
-          <li>Services and description written</li>
-          <li>Linked correctly to your website</li>
-        </ul>
-        <a class="btn-outline" href="/free-quote.html">Get a quote</a>
-      </div>
-      <div class="service-visual">
-        <div class="service-visual-inner">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FDF8F3" stroke-width="1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div class="service-visual-label">Google Business</div>
-        </div>
-      </div>
-    </div>
-
   </div>
-</section>
+</div>
 
-<!-- PRICING TABLE -->
-<section class="pricing-section">
-  <div class="pricing-inner">
-    <div class="pricing-header">
-      <p class="section-eyebrow">Transparent pricing</p>
-      <h2 class="section-heading dark">What's included in each package</h2>
-      <p class="section-body dark">All prices are starting points. Every project is quoted individually based on your specific needs. No hidden fees, no lock-in contracts.</p>
+<!-- SEO -->
+<div class="service-block navy-mid reverse" id="seo">
+  <div class="service-block-inner">
+    <div class="service-content">
+      <p class="service-eyebrow">Get found</p>
+      <h2>SEO Optimisation</h2>
+      <p>97% of people check a business online before they visit. If you're not showing up when someone searches for what you do in the Whitsundays, you're handing customers to your competitors.</p>
+      <p>SEO isn't magic and it isn't instant — but done properly from the start, it compounds over time. I make sure your site is built on solid technical foundations, targeting the right local search terms, and sending the right signals to Google.</p>
+      <p>Whether you need a basic setup as part of a new website build or a more thorough optimisation of an existing site, I'll give you an honest assessment of where you stand and what will actually move the needle.</p>
+      <a class="btn-outline" href="/free-quote.html">Get a quote</a>
     </div>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>What's included</th>
-          <th>Starter</th>
-          <th class="featured-col">Growth</th>
-          <th>Premium</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="price-row">
-          <td>Starting from</td>
-          <td>$1,500</td>
-          <td>$2,500</td>
-          <td>$4,500</td>
-        </tr>
-        <tr><td>Number of pages</td><td>Up to 5</td><td>Up to 10</td><td>Up to 20</td></tr>
-        <tr><td>Mobile responsive design</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Contact form</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Basic SEO setup</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Google Business Profile</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Advanced SEO setup</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Social media setup</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Booking widget integration</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Full social media setup</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Google Business Profile optimisation</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Free support period</td><td><span class="dash">—</span></td><td>1 month</td><td>3 months</td></tr>
-        <tr class="cta-row">
-          <td></td>
-          <td><a class="btn-pkg btn-pkg-ghost" href="/free-quote.html">Get started</a></td>
-          <td><a class="btn-pkg btn-pkg-solid" href="/free-quote.html">Get started</a></td>
-          <td><a class="btn-pkg btn-pkg-ghost" href="/free-quote.html">Get started</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="service-visual-wrap">
+      <img src="/seo.jpg" alt="SEO growth analytics">
+    </div>
   </div>
-</section>
+</div>
+
+<!-- SOCIAL MEDIA BRANDING -->
+<div class="service-block navy" id="social-media">
+  <div class="service-block-inner">
+    <div class="service-content">
+      <p class="service-eyebrow">Build presence</p>
+      <h2>Social Media Branding</h2>
+      <p>Before a potential customer visits your website, there's a good chance they've already looked you up on Facebook or Instagram. What they find there — or don't find — shapes their first impression before you've had a chance to say a word.</p>
+      <p>A professionally set up social profile with consistent branding, complete information, and a clear link back to your website tells people you're a legitimate, active business worth dealing with. It's a small investment that makes everything else work harder.</p>
+      <p>I set up and brand your social profiles to match your website — so wherever a customer finds you, they get the same professional impression.</p>
+      <a class="btn-outline" href="/free-quote.html">Get a quote</a>
+    </div>
+    <div class="service-visual-wrap">
+      <img src="/social-media.jpg" alt="Social media branding for local business">
+    </div>
+  </div>
+</div>
+
+<!-- GOOGLE BUSINESS PROFILE -->
+<div class="service-block navy-mid reverse" id="google-business">
+  <div class="service-block-inner">
+    <div class="service-content">
+      <p class="service-eyebrow">Local search</p>
+      <h2>Google Business Profile</h2>
+      <p>When someone searches "café Airlie Beach" or "tour operator Whitsundays", the businesses that appear in the map pack — the three listings that show up before the search results — get the majority of the clicks and calls.</p>
+      <p>A properly set up and optimised Google Business Profile is one of the most powerful free tools available to local businesses. Most aren't using it to its full potential, which means the ones that do stand out immediately.</p>
+      <p>I set it up correctly, get it verified, optimise it with the right keywords and categories, and make sure your information is complete, consistent, and working in your favour every time someone searches locally.</p>
+      <a class="btn-outline" href="/free-quote.html">Get a quote</a>
+    </div>
+    <div class="service-visual-wrap gbp-visual-wrap">
+      <div class="gbp-visual">
+        <div class="gbp-map-bg"></div>
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div class="gbp-pin-wrap">
+            <svg width="72" height="90" viewBox="0 0 72 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M36 0C16.1 0 0 16.1 0 36C0 56.7 36 90 36 90C36 90 72 56.7 72 36C72 16.1 55.9 0 36 0Z" fill="#EA4335"/>
+              <path d="M36 0C16.1 0 0 16.1 0 36C0 45.5 4.2 54 11 59.8L36 36V0Z" fill="#4285F4"/>
+              <path d="M36 0V36L61 59.8C67.8 54 72 45.5 72 36C72 16.1 55.9 0 36 0Z" fill="#FBBC05"/>
+              <circle cx="36" cy="36" r="14" fill="white"/>
+              <circle cx="36" cy="36" r="8" fill="#34A853"/>
+            </svg>
+            <div class="gbp-pin-shadow"></div>
+          </div>
+          <div class="gbp-pin-dots">
+            <div class="gbp-dot"></div>
+            <div class="gbp-dot"></div>
+            <div class="gbp-dot"></div>
+            <div class="gbp-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- WAAS -->
 <section class="waas-section">
@@ -867,7 +510,7 @@
   <div class="cta-inner">
     <div class="cta-text">
       <h2>Not sure which option is right?</h2>
-      <p>Let's have a free chat and figure it out together.</p>
+      <p>No pressure, no jargon — just a friendly chat about your business.</p>
     </div>
     <div class="cta-actions">
       <a class="btn-primary" href="/free-quote.html">Get a free quote</a>
