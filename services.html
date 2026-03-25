@@ -94,94 +94,85 @@
   width:100%;height:100%;
   display:flex;align-items:center;
   justify-content:center;
-  background:var(--navy);
   position:relative;
   overflow:hidden;
 }
-.gbp-visual::before{
-  content:'';position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:300px;height:300px;
-  background:radial-gradient(circle,rgba(66,133,244,0.08) 0%,transparent 70%);
-}
-.gbp-map-bg{
+.gbp-map-svg{
   position:absolute;inset:0;
-  opacity:0.06;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.3) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.3) 1px,transparent 1px);
-  background-size:40px 40px;
+  width:100%;height:100%;
+  object-fit:cover;
 }
 .gbp-pin-wrap{
   position:relative;z-index:2;
   display:flex;flex-direction:column;
   align-items:center;
   animation:pinFloat 3s ease-in-out infinite;
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,0.3));
 }
 @keyframes pinFloat{
   0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-12px);}
+  50%{transform:translateY(-14px);}
 }
 .gbp-pin-shadow{
-  width:24px;height:8px;
-  background:rgba(0,0,0,0.3);
+  width:20px;height:6px;
+  background:rgba(0,0,0,0.2);
   border-radius:50%;
   margin-top:4px;
   animation:shadowPulse 3s ease-in-out infinite;
 }
 @keyframes shadowPulse{
-  0%,100%{transform:scaleX(1);opacity:0.3;}
-  50%{transform:scaleX(0.6);opacity:0.15;}
+  0%,100%{transform:scaleX(1);opacity:0.25;}
+  50%{transform:scaleX(0.5);opacity:0.1;}
 }
-.gbp-pin-dots{
-  display:flex;gap:6px;
-  margin-top:1.5rem;
+.gbp-pulse{
+  position:absolute;
+  width:60px;height:60px;
+  border-radius:50%;
+  border:2px solid rgba(234,67,53,0.5);
+  z-index:1;
+  animation:pulsRing 2.5s ease-out infinite;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  margin-top:10px;
 }
-.gbp-dot{
-  width:8px;height:8px;border-radius:50%;
-  animation:dotPulse 2s ease-in-out infinite;
-}
-.gbp-dot:nth-child(1){background:#4285F4;animation-delay:0s;}
-.gbp-dot:nth-child(2){background:#EA4335;animation-delay:0.2s;}
-.gbp-dot:nth-child(3){background:#FBBC05;animation-delay:0.4s;}
-.gbp-dot:nth-child(4){background:#34A853;animation-delay:0.6s;}
-@keyframes dotPulse{
-  0%,100%{transform:scale(1);opacity:0.7;}
-  50%{transform:scale(1.4);opacity:1;}
+@keyframes pulsRing{
+  0%{transform:translate(-50%,-50%) scale(0.5);opacity:0.8;}
+  100%{transform:translate(-50%,-50%) scale(2.5);opacity:0;}
 }
 
 /* WAAS */
-.waas-section{background:var(--navy-mid);padding:7rem 5%;}
+.waas-section{background:var(--off-white);padding:7rem 5%;}
 .waas-inner{max-width:1200px;margin:0 auto;}
 .waas-header{text-align:center;margin-bottom:1.5rem;}
+.waas-header .section-eyebrow{color:var(--orange);}
+.waas-header .section-heading{color:var(--navy);}
 .waas-intro{max-width:680px;margin:0 auto 4rem;text-align:center;}
-.waas-intro p{font-size:0.95rem;color:var(--text-muted);line-height:1.85;margin-bottom:1rem;}
+.waas-intro p{font-size:0.95rem;color:rgba(10,31,61,0.6);line-height:1.85;margin-bottom:1rem;}
 .waas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
-.waas-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2.25rem;position:relative;transition:border-color 0.2s,transform 0.2s;}
-.waas-card:hover{border-color:rgba(212,97,26,0.4);transform:translateY(-3px);}
-.waas-card.featured{background:rgba(212,97,26,0.06);border-color:var(--orange);border-width:2px;}
+.waas-card{background:var(--white);border:1.5px solid rgba(10,31,61,0.1);border-radius:12px;padding:2.25rem;position:relative;transition:box-shadow 0.2s,transform 0.2s;}
+.waas-card:hover{box-shadow:0 12px 48px rgba(10,31,61,0.1);transform:translateY(-3px);}
+.waas-card.featured{border-color:var(--orange);border-width:2px;}
 .waas-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--orange);color:var(--white);font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 1.1rem;border-radius:20px;white-space:nowrap;}
 .waas-tier{font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:0.4rem;}
-.waas-name{font-family:'Agdasima',sans-serif;font-size:1.9rem;color:var(--white);margin-bottom:0.25rem;line-height:1.05;}
-.waas-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:0.25rem;}
-.waas-price span{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:400;color:var(--text-muted);}
-.waas-ideal{font-size:0.8rem;color:var(--text-dim);margin-bottom:1.5rem;font-style:italic;}
-.waas-divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin-bottom:1.5rem;}
+.waas-name{font-family:'Agdasima',sans-serif;font-size:1.9rem;color:var(--navy);margin-bottom:0.25rem;line-height:1.05;}
+.waas-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:0.25rem;}
+.waas-price span{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:400;color:rgba(10,31,61,0.45);}
+.waas-ideal{font-size:0.8rem;color:rgba(10,31,61,0.45);margin-bottom:1.5rem;font-style:italic;}
+.waas-divider{border:none;border-top:1px solid rgba(10,31,61,0.08);margin-bottom:1.5rem;}
 .waas-features{list-style:none;padding:0;margin-bottom:2rem;}
-.waas-features li{font-size:0.85rem;color:rgba(253,248,243,0.65);padding:0.4rem 0;display:flex;align-items:flex-start;gap:0.65rem;line-height:1.5;}
+.waas-features li{font-size:0.875rem;color:rgba(10,31,61,0.72);padding:0.4rem 0;display:flex;align-items:flex-start;gap:0.65rem;line-height:1.5;}
 .waas-features li::before{content:'';width:17px;height:17px;min-width:17px;border-radius:50%;background:rgba(212,97,26,0.1);display:inline-flex;align-items:center;justify-content:center;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3 3 7-7' stroke='%23D4611A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;}
-.btn-waas-ghost{width:100%;padding:0.9rem;border-radius:4px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;cursor:pointer;letter-spacing:0.03em;transition:all 0.2s;text-align:center;display:block;text-decoration:none;background:transparent;color:rgba(253,248,243,0.7);border:1.5px solid rgba(255,255,255,0.15);}
-.btn-waas-ghost:hover{border-color:var(--orange);color:var(--orange);}
+.btn-waas-ghost{width:100%;padding:0.9rem;border-radius:4px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;cursor:pointer;letter-spacing:0.03em;transition:all 0.2s;text-align:center;display:block;text-decoration:none;background:transparent;color:var(--orange);border:1.5px solid var(--orange);}
+.btn-waas-ghost:hover{background:var(--orange);color:var(--white);}
 .btn-waas-solid{width:100%;padding:0.9rem;border-radius:4px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;cursor:pointer;letter-spacing:0.03em;transition:all 0.2s;text-align:center;display:block;text-decoration:none;background:var(--orange);color:var(--white);border:1.5px solid var(--orange);}
 .btn-waas-solid:hover{background:#bf5516;color:var(--white);}
-.waas-onboarding{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.waas-onboarding{background:var(--navy);border-radius:10px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
 .waas-onboarding-text h4{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.4rem;}
 .waas-onboarding-text p{font-size:0.875rem;color:var(--text-muted);line-height:1.6;max-width:560px;}
 .waas-onboarding-price{flex-shrink:0;text-align:center;}
 .waas-onboarding-price .amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:700;color:var(--orange);display:block;}
 .waas-onboarding-price .label{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.06em;text-transform:uppercase;}
-.waas-note{text-align:center;margin-top:1.5rem;font-size:0.8rem;color:var(--text-dim);line-height:1.6;}
+.waas-note{text-align:center;margin-top:1.5rem;font-size:0.8rem;color:rgba(10,31,61,0.45);line-height:1.6;}
 
 /* MAINTENANCE */
 .maintenance-section{background:var(--navy);padding:5rem 5%;}
@@ -341,25 +332,80 @@
     </div>
     <div class="service-visual-wrap gbp-visual-wrap">
       <div class="gbp-visual">
-        <div class="gbp-map-bg"></div>
-        <div style="display:flex;flex-direction:column;align-items:center;">
-          <div class="gbp-pin-wrap">
-            <svg width="72" height="90" viewBox="0 0 72 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Map background SVG -->
+        <svg class="gbp-map-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Base map background -->
+          <rect width="400" height="300" fill="#E8E0D8"/>
+          <!-- City blocks -->
+          <rect x="0" y="0" width="60" height="45" fill="#D4CCC4" rx="2"/>
+          <rect x="70" y="0" width="80" height="45" fill="#DADDD8" rx="2"/>
+          <rect x="160" y="0" width="50" height="45" fill="#D4CCC4" rx="2"/>
+          <rect x="220" y="0" width="90" height="45" fill="#DADDD8" rx="2"/>
+          <rect x="320" y="0" width="80" height="45" fill="#D4CCC4" rx="2"/>
+          <rect x="0" y="55" width="45" height="60" fill="#DADDD8" rx="2"/>
+          <rect x="55" y="55" width="95" height="60" fill="#D4CCC4" rx="2"/>
+          <rect x="160" y="55" width="70" height="60" fill="#DADDD8" rx="2"/>
+          <rect x="240" y="55" width="60" height="60" fill="#D4CCC4" rx="2"/>
+          <rect x="310" y="55" width="90" height="60" fill="#DADDD8" rx="2"/>
+          <rect x="0" y="125" width="80" height="50" fill="#D4CCC4" rx="2"/>
+          <rect x="90" y="125" width="60" height="50" fill="#DADDD8" rx="2"/>
+          <rect x="160" y="125" width="90" height="50" fill="#D4CCC4" rx="2"/>
+          <rect x="260" y="125" width="50" height="50" fill="#DADDD8" rx="2"/>
+          <rect x="320" y="125" width="80" height="50" fill="#D4CCC4" rx="2"/>
+          <rect x="0" y="185" width="55" height="55" fill="#DADDD8" rx="2"/>
+          <rect x="65" y="185" width="85" height="55" fill="#D4CCC4" rx="2"/>
+          <rect x="160" y="185" width="65" height="55" fill="#DADDD8" rx="2"/>
+          <rect x="235" y="185" width="75" height="55" fill="#D4CCC4" rx="2"/>
+          <rect x="320" y="185" width="80" height="55" fill="#DADDD8" rx="2"/>
+          <rect x="0" y="250" width="90" height="50" fill="#D4CCC4" rx="2"/>
+          <rect x="100" y="250" width="70" height="50" fill="#DADDD8" rx="2"/>
+          <rect x="180" y="250" width="80" height="50" fill="#D4CCC4" rx="2"/>
+          <rect x="270" y="250" width="60" height="50" fill="#DADDD8" rx="2"/>
+          <rect x="340" y="250" width="60" height="50" fill="#D4CCC4" rx="2"/>
+          <!-- Roads horizontal -->
+          <rect x="0" y="45" width="400" height="10" fill="#FFFFFF" opacity="0.9"/>
+          <rect x="0" y="115" width="400" height="10" fill="#FFFFFF" opacity="0.9"/>
+          <rect x="0" y="175" width="400" height="10" fill="#FFFFFF" opacity="0.9"/>
+          <rect x="0" y="240" width="400" height="10" fill="#FFFFFF" opacity="0.9"/>
+          <!-- Roads vertical -->
+          <rect x="60" y="0" width="10" height="300" fill="#FFFFFF" opacity="0.9"/>
+          <rect x="150" y="0" width="10" height="300" fill="#FFFFFF" opacity="0.9"/>
+          <rect x="230" y="0" width="10" height="300" fill="#FFFFFF" opacity="0.9"/>
+          <rect x="310" y="0" width="10" height="300" fill="#FFFFFF" opacity="0.9"/>
+          <!-- Road centre lines -->
+          <line x1="0" y1="50" x2="400" y2="50" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <line x1="0" y1="120" x2="400" y2="120" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <line x1="0" y1="180" x2="400" y2="180" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <line x1="0" y1="245" x2="400" y2="245" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <line x1="65" y1="0" x2="65" y2="300" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <line x1="155" y1="0" x2="155" y2="300" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <line x1="235" y1="0" x2="235" y2="300" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <line x1="315" y1="0" x2="315" y2="300" stroke="#F5CB42" stroke-width="0.5" stroke-dasharray="8 6" opacity="0.6"/>
+          <!-- Park / green area -->
+          <rect x="160" y="55" width="70" height="60" fill="#C8E6C9" rx="2"/>
+          <!-- Water feature -->
+          <rect x="0" y="125" width="80" height="50" fill="#BBDEFB" rx="2"/>
+          <!-- Subtle overlay to soften map -->
+          <rect width="400" height="300" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+        <!-- Animated pin -->
+        <div class="gbp-pin-wrap">
+          <svg width="56" height="70" viewBox="0 0 72 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <filter id="pinShadow">
+              <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(0,0,0,0.35)"/>
+            </filter>
+            <g filter="url(#pinShadow)">
               <path d="M36 0C16.1 0 0 16.1 0 36C0 56.7 36 90 36 90C36 90 72 56.7 72 36C72 16.1 55.9 0 36 0Z" fill="#EA4335"/>
               <path d="M36 0C16.1 0 0 16.1 0 36C0 45.5 4.2 54 11 59.8L36 36V0Z" fill="#4285F4"/>
               <path d="M36 0V36L61 59.8C67.8 54 72 45.5 72 36C72 16.1 55.9 0 36 0Z" fill="#FBBC05"/>
               <circle cx="36" cy="36" r="14" fill="white"/>
               <circle cx="36" cy="36" r="8" fill="#34A853"/>
-            </svg>
-            <div class="gbp-pin-shadow"></div>
-          </div>
-          <div class="gbp-pin-dots">
-            <div class="gbp-dot"></div>
-            <div class="gbp-dot"></div>
-            <div class="gbp-dot"></div>
-            <div class="gbp-dot"></div>
-          </div>
+            </g>
+          </svg>
+          <div class="gbp-pin-shadow"></div>
         </div>
+        <!-- Pulse ring -->
+        <div class="gbp-pulse"></div>
       </div>
     </div>
   </div>
@@ -440,7 +486,7 @@
         <span class="label">Once only</span>
       </div>
     </div>
-    <p class="waas-note">Not sure if WaaS or a one-off build is right for you? <a href="/contact.html" style="color:var(--orange-tint);text-decoration:none;">Let's have a chat</a> — there's no obligation and no sales pitch.</p>
+    <p class="waas-note">Not sure if WaaS or a one-off build is right for you? <a href="/contact.html" style="color:var(--orange);text-decoration:none;">Let's have a chat</a> — there's no obligation and no sales pitch.</p>
   </div>
 </section>
 
