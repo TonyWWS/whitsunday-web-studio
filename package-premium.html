@@ -53,6 +53,8 @@
 .signup-note{font-size:0.8rem;color:var(--text-dim);line-height:1.6;}
 .compare-link{margin-top:2rem;font-size:0.85rem;color:var(--text-dim);}
 .compare-link a{color:var(--orange-tint);text-decoration:none;}
+.btn-scroll-prompt{display:block;width:100%;text-align:center;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:4px;color:rgba(253,248,243,0.55);font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.03em;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+.btn-scroll-prompt:hover{border-color:rgba(212,97,26,0.5);color:var(--orange-tint);}
 @media(max-width:900px){.package-hero-inner{grid-template-columns:1fr;gap:3rem;}.detail-grid{grid-template-columns:1fr;}.needs-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.needs-grid{grid-template-columns:1fr;}}
 </style>
@@ -66,7 +68,6 @@
       <span class="package-hero-tag">Premium Package</span>
       <h1>Get ahead.</h1>
       <p class="package-hero-sub">Designed for growing operators who want a complete digital presence, stronger branding, and ongoing support to stay ahead of the competition.</p>
-      <a class="btn-signup" href="/free-quote.html?package=premium">Yes — sign me up for this package</a>
     </div>
     <div class="package-price-block">
       <p class="package-price-label">Starting from</p>
@@ -81,12 +82,12 @@
         <li>2 rounds of revisions</li>
         <li>Handover training session</li>
       </ul>
-      <a class="btn-signup" href="/free-quote.html?package=premium" style="width:100%;text-align:center;display:block;">Get started today</a>
+      <a class="btn-scroll-prompt" href="#package-detail">See everything that's included ↓</a>
     </div>
   </div>
 </section>
 
-<section class="package-detail">
+<section class="package-detail" id="package-detail">
   <div class="package-detail-inner">
     <p class="section-eyebrow">What you get</p>
     <h2 class="section-heading">Everything in the Premium package, explained</h2>
