@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Whitsunday Web Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0A1F3D;
+      --orange:    #D4611A;
+      --offwhite:  #FDF8F3;
+      --mid:       #4A5568;
+      --border:    #D6C9B8;
+      --radius:    6px;
+    }
+
+    body {
+      background: var(--offwhite);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Agdasima', sans-serif;
+      font-size: 1.4rem;
+      color: var(--offwhite);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .nav-back {
+      font-size: 0.875rem;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.75; }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: var(--navy);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Agdasima', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--offwhite);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+    }
+    .hero .updated {
+      font-size: 0.875rem;
+      color: var(--orange);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── LAYOUT ── */
+    .wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ── INTRO CARD ── */
+    .intro-card {
+      background: #fff;
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--mid);
+    }
+    .intro-card p + p { margin-top: 0.75rem; }
+    .intro-card a { color: var(--orange); font-weight: 500; }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 1.75rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .toc h2 {
+      font-family: 'Agdasima', sans-serif;
+      font-size: 1.1rem;
+      color: var(--offwhite);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .toc ol {
+      list-style: decimal;
+      padding-left: 1.25rem;
+    }
+    .toc ol li { margin-bottom: 0.3rem; }
+    .toc ol li a {
+      color: var(--orange);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .toc ol li a:hover { opacity: 0.75; }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-bottom: 2.75rem;
+      scroll-margin-top: 1rem;
+    }
+    section h2 {
+      font-family: 'Agdasima', sans-serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 1.25rem 0 0.5rem;
+    }
+    section p { margin-bottom: 0.85rem; color: var(--mid); }
+    section ul, section ol {
+      padding-left: 1.5rem;
+      margin-bottom: 0.85rem;
+      color: var(--mid);
+    }
+    section li { margin-bottom: 0.3rem; }
+    section a { color: var(--orange); font-weight: 500; }
+    section strong { color: var(--navy); }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .data-table th {
+      background: var(--navy);
+      color: var(--offwhite);
+      font-family: 'Agdasima', sans-serif;
+      letter-spacing: 0.05em;
+      text-align: left;
+      padding: 0.6rem 0.875rem;
+    }
+    .data-table td {
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.875rem;
+      color: var(--mid);
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: #f5efe8; }
+    .data-table .no { color: #888; font-style: italic; }
+
+    /* ── CONTACT BOX ── */
+    .contact-box {
+      background: var(--navy);
+      color: var(--offwhite);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .contact-box a { color: var(--orange); font-weight: 500; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #8a9bb5;
+    }
+    footer a { color: var(--orange); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .wrapper { padding: 2rem 1.25rem 4rem; }
+      .hero { padding: 2.5rem 1.25rem 2rem; }
+      .data-table { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">Whitsunday Web Studio</a>
+  <a class="nav-back" href="/#contact">← Back to Site</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: March 29, 2026</p>
+</div>
+
+<!-- CONTENT -->
+<div class="wrapper">
+
+  <!-- INTRO -->
+  <div class="intro-card">
+    <p>This Privacy Notice for <strong>Whitsunday Web Studio</strong> ('we', 'us', or 'our') describes how and why we might access, collect, store, use, and/or share your personal information when you use our services, including when you:</p>
+    <ul style="margin: 0.75rem 0 0.75rem 1.25rem; color: inherit;">
+      <li>Visit our website at <a href="https://whitsunday-web-studio.vercel.app">whitsunday-web-studio.vercel.app</a> or any website of ours that links to this Privacy Notice</li>
+      <li>Use Whitsunday Web Studio — a boutique web design studio based in Airlie Beach, Queensland, specialising in website design, development, and digital services for hospitality and tourism businesses in the Whitsundays region</li>
+      <li>Engage with us in other related ways, including any marketing or events</li>
+    </ul>
+    <p><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:tony@whitsundaywebstudio.com">tony@whitsundaywebstudio.com</a>.</p>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#s1">What Information Do We Collect?</a></li>
+      <li><a href="#s2">How Do We Process Your Information?</a></li>
+      <li><a href="#s3">What Legal Bases Do We Rely On?</a></li>
+      <li><a href="#s4">When and With Whom Do We Share Your Information?</a></li>
+      <li><a href="#s5">Do We Use Cookies and Tracking Technologies?</a></li>
+      <li><a href="#s6">How Long Do We Keep Your Information?</a></li>
+      <li><a href="#s7">How Do We Keep Your Information Safe?</a></li>
+      <li><a href="#s8">Do We Collect Information From Minors?</a></li>
+      <li><a href="#s9">What Are Your Privacy Rights?</a></li>
+      <li><a href="#s10">Controls for Do-Not-Track Features</a></li>
+      <li><a href="#s11">Do United States Residents Have Specific Privacy Rights?</a></li>
+      <li><a href="#s12">Do Other Regions Have Specific Privacy Rights?</a></li>
+      <li><a href="#s13">Do We Make Updates to This Notice?</a></li>
+      <li><a href="#s14">How Can You Contact Us About This Notice?</a></li>
+      <li><a href="#s15">How Can You Review, Update, or Delete Your Data?</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <h2>1. What Information Do We Collect?</h2>
+    <h3>Personal information you disclose to us</h3>
+    <p><em>In Short: We collect personal information that you provide to us.</em></p>
+    <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</p>
+    <p><strong>Personal Information Provided by You.</strong> The personal information we collect may include:</p>
+    <ul>
+      <li>Names</li>
+      <li>Phone numbers</li>
+      <li>Email addresses</li>
+    </ul>
+    <p><strong>Sensitive Information.</strong> We do not process sensitive information.</p>
+    <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+
+    <h3>Information automatically collected</h3>
+    <p><em>In Short: Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our Services.</em></p>
+    <p>We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, and other technical information.</p>
+    <p>Like many businesses, we also collect information through cookies and similar technologies. The information we collect includes:</p>
+    <ul>
+      <li><strong>Log and Usage Data.</strong> Service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services.</li>
+      <li><strong>Device Data.</strong> Information about your computer, phone, tablet, or other device you use to access the Services, including IP address, browser type, hardware model, and operating system.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <h2>2. How Do We Process Your Information?</h2>
+    <p><em>In Short: We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law.</em></p>
+    <p>We process your personal information for a variety of reasons, including:</p>
+    <ul>
+      <li><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service.</li>
+      <li><strong>To respond to user enquiries and offer support.</strong> We may process your information to respond to your enquiries and solve any potential issues.</li>
+      <li><strong>To send administrative information to you.</strong> We may process your information to send you details about our products and services, changes to our terms and policies.</li>
+      <li><strong>To fulfil and manage your orders.</strong> We may process your information to fulfil and manage your orders, payments, and exchanges made through the Services.</li>
+      <li><strong>To protect our Services.</strong> We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention.</li>
+      <li><strong>To identify usage trends.</strong> We may process information about how you use our Services to better understand how they are being used so we can improve them.</li>
+      <li><strong>To save or protect an individual's vital interest.</strong> We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <h2>3. What Legal Bases Do We Rely On?</h2>
+    <p><em>In Short: We only process your personal information when we believe it is necessary and we have a valid legal reason to do so under applicable law.</em></p>
+    <p>The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on. These may include:</p>
+    <ul>
+      <li><strong>Consent.</strong> We may process your information if you have given us permission to use your personal information for a specific purpose. You can withdraw your consent at any time.</li>
+      <li><strong>Performance of a Contract.</strong> We may process your personal information when necessary to fulfil our contractual obligations to you, including providing our Services.</li>
+      <li><strong>Legitimate Interests.</strong> We may process your information when it is reasonably necessary to achieve our legitimate business interests, such as analysing how our Services are used and diagnosing problems or preventing fraudulent activities.</li>
+      <li><strong>Legal Obligations.</strong> We may process your information where necessary for compliance with our legal obligations.</li>
+      <li><strong>Vital Interests.</strong> We may process your information where necessary to protect your vital interests or those of a third party.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="s4">
+    <h2>4. When and With Whom Do We Share Your Information?</h2>
+    <p><em>In Short: We may share information in specific situations and with specific third parties.</em></p>
+    <p>We may need to share your personal information in the following situations:</p>
+    <ul>
+      <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="s5">
+    <h2>5. Do We Use Cookies and Tracking Technologies?</h2>
+    <p><em>In Short: We may use cookies and other tracking technologies to collect and store your information.</em></p>
+    <p>We may use cookies and similar tracking technologies (like web beacons and pixels) to gather information when you interact with our Services. Some online tracking technologies help us maintain the security of our Services, prevent crashes, fix bugs, save your preferences, and assist with basic site functions.</p>
+    <p>Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice. You can usually choose to set your browser to remove or reject cookies, though this could affect certain features or services.</p>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section id="s6">
+    <h2>6. How Long Do We Keep Your Information?</h2>
+    <p><em>In Short: We keep your information for as long as necessary to fulfil the purposes outlined in this Privacy Notice unless otherwise required by law.</em></p>
+    <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law. No purpose in this notice will require us keeping your personal information for longer than <strong>2 years</strong>.</p>
+    <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymise such information, or securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section id="s7">
+    <h2>7. How Do We Keep Your Information Safe?</h2>
+    <p><em>In Short: We aim to protect your personal information through a system of organisational and technical security measures.</em></p>
+    <p>We have implemented appropriate and reasonable technical and organisational security measures designed to protect the security of any personal information we process. However, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure. You should only access the Services within a secure environment.</p>
+  </section>
+
+  <!-- SECTION 8 -->
+  <section id="s8">
+    <h2>8. Do We Collect Information From Minors?</h2>
+    <p><em>In Short: We do not knowingly collect data from or market to children under 18 years of age.</em></p>
+    <p>We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 years of age. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="mailto:tony@whitsundaywebstudio.com">tony@whitsundaywebstudio.com</a>.</p>
+  </section>
+
+  <!-- SECTION 9 -->
+  <section id="s9">
+    <h2>9. What Are Your Privacy Rights?</h2>
+    <p><em>In Short: Depending on your location, the applicable privacy law may mean you have certain rights regarding your personal information.</em></p>
+    <p>In some regions (like the EEA, UK, and Switzerland), you have certain rights under applicable data protection laws. These may include the right to: request access and obtain a copy of your personal information; request rectification or erasure; restrict the processing of your personal information; data portability; and not to be subject to automated decision-making.</p>
+    <p>You can make such a request by contacting us using the details in <a href="#s14">Section 14</a>. We will consider and act upon any request in accordance with applicable data protection laws.</p>
+    <p>If you are located in the EEA or UK and believe we are unlawfully processing your personal information, you have the right to complain to your <a href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm" target="_blank" rel="noopener">Member State data protection authority</a> or <a href="https://ico.org.uk/make-a-complaint/data-protection-complaints/data-protection-complaints/" target="_blank" rel="noopener">UK data protection authority</a>.</p>
+    <p><strong>Withdrawing your consent:</strong> You have the right to withdraw your consent at any time by contacting us using the details provided in <a href="#s14">Section 14</a>. Please note that this will not affect the lawfulness of processing before its withdrawal.</p>
+  </section>
+
+  <!-- SECTION 10 -->
+  <section id="s10">
+    <h2>10. Controls for Do-Not-Track Features</h2>
+    <p>Most web browsers and some mobile operating systems include a Do-Not-Track ('DNT') feature or setting you can activate to signal your privacy preference. At this stage, no uniform technology standard for recognising and implementing DNT signals has been finalised. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.</p>
+  </section>
+
+  <!-- SECTION 11 -->
+  <section id="s11">
+    <h2>11. Do United States Residents Have Specific Privacy Rights?</h2>
+    <p><em>In Short: If you are a resident of certain US states, you may have specific rights regarding your personal information.</em></p>
+    <p>If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about the personal information we maintain about you, correct inaccuracies, get a copy of, or delete your personal information.</p>
+
+    <h3>Categories of Personal Information We Collect</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Examples</th>
+          <th>Collected</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A. Identifiers</td><td>Name, email address, IP address</td><td class="no">No</td></tr>
+        <tr><td>B. California Customer Records statute</td><td>Name, contact info, financial information</td><td class="no">No</td></tr>
+        <tr><td>C. Protected classification characteristics</td><td>Gender, age, race, ethnicity</td><td class="no">No</td></tr>
+        <tr><td>D. Commercial information</td><td>Transaction information, purchase history</td><td class="no">No</td></tr>
+        <tr><td>E. Biometric information</td><td>Fingerprints and voiceprints</td><td class="no">No</td></tr>
+        <tr><td>F. Internet or network activity</td><td>Browsing history, interactions with websites</td><td class="no">No</td></tr>
+        <tr><td>G. Geolocation data</td><td>Device location</td><td class="no">No</td></tr>
+        <tr><td>H. Audio, electronic, sensory information</td><td>Images, audio, video or call recordings</td><td class="no">No</td></tr>
+        <tr><td>I. Professional or employment-related information</td><td>Business contact details, job title</td><td class="no">No</td></tr>
+        <tr><td>J. Education information</td><td>Student records and directory information</td><td class="no">No</td></tr>
+        <tr><td>K. Inferences from collected personal information</td><td>Profile or summary about preferences</td><td class="no">No</td></tr>
+        <tr><td>L. Sensitive personal information</td><td>—</td><td class="no">No</td></tr>
+      </tbody>
+    </table>
+
+    <p>We have not disclosed, sold, or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. We will not sell or share personal information in the future belonging to website visitors, users, and other consumers.</p>
+
+    <h3>How to Exercise Your Rights</h3>
+    <p>To exercise these rights, you can contact us by visiting <a href="/#contact">our contact form</a> or by emailing us at <a href="mailto:tony@whitsundaywebstudio.com">tony@whitsundaywebstudio.com</a>.</p>
+  </section>
+
+  <!-- SECTION 12 -->
+  <section id="s12">
+    <h2>12. Do Other Regions Have Specific Privacy Rights?</h2>
+    <p><em>In Short: You may have additional rights based on the country you reside in.</em></p>
+
+    <h3>Australia and New Zealand</h3>
+    <p>We collect and process your personal information under the obligations and conditions set by Australia's Privacy Act 1988 and New Zealand's Privacy Act 2020.</p>
+    <p>This Privacy Notice satisfies the notice requirements defined in both Privacy Acts, in particular: what personal information we collect from you, from which sources, for which purposes, and other recipients of your personal information.</p>
+    <p>At any time, you have the right to request access to or correction of your personal information by contacting us using the details in <a href="#s14">Section 14</a>.</p>
+    <p>If you believe we are unlawfully processing your personal information, you have the right to submit a complaint to the <a href="https://www.oaic.gov.au/privacy/privacy-complaints/lodge-a-privacy-complaint-with-us" target="_blank" rel="noopener">Office of the Australian Information Commissioner</a> or the <a href="https://www.privacy.org.nz/your-rights/making-a-complaint/" target="_blank" rel="noopener">Office of New Zealand Privacy Commissioner</a>.</p>
+  </section>
+
+  <!-- SECTION 13 -->
+  <section id="s13">
+    <h2>13. Do We Make Updates to This Notice?</h2>
+    <p><em>In Short: Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></p>
+    <p>We may update this Privacy Notice from time to time. The updated version will be indicated by an updated 'Revised' date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</p>
+  </section>
+
+  <!-- SECTION 14 -->
+  <section id="s14">
+    <h2>14. How Can You Contact Us About This Notice?</h2>
+    <p>If you have questions or comments about this notice, you may contact our Data Protection Officer (DPO) by email or post:</p>
+    <div class="contact-box">
+      <strong>Whitsunday Web Studio</strong><br>
+      Data Protection Officer<br>
+      Airlie Beach, Queensland 4802<br>
+      Australia<br><br>
+      <a href="mailto:tony@whitsundaywebstudio.com">tony@whitsundaywebstudio.com</a>
+    </div>
+  </section>
+
+  <!-- SECTION 15 -->
+  <section id="s15">
+    <h2>15. How Can You Review, Update, or Delete Your Data?</h2>
+    <p>Based on the applicable laws of your country or state of residence, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information.</p>
+    <p>To request to review, update, or delete your personal information, please <a href="/#contact">visit our contact form</a> or email <a href="mailto:tony@whitsundaywebstudio.com">tony@whitsundaywebstudio.com</a>.</p>
+  </section>
+
+</div><!-- /wrapper -->
+
+<footer>
+  <p>&copy; 2026 Whitsunday Web Studio &nbsp;|&nbsp; <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms.html">Terms &amp; Conditions</a></p>
+</footer>
+
+</body>
+</html>
