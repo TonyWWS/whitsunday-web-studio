@@ -174,6 +174,29 @@
 @media(max-width:900px){
   .contact-inner{grid-template-columns:1fr;gap:3rem;}
 }
+
+/* White form fields */
+.contact-form-wrap input,
+.contact-form-wrap select,
+.contact-form-wrap textarea {
+  background: #ffffff !important;
+  color: #0A1F3D !important;
+  border-color: rgba(10,31,61,0.2) !important;
+}
+.contact-form-wrap input::placeholder,
+.contact-form-wrap textarea::placeholder {
+  color: rgba(10,31,61,0.4) !important;
+}
+.contact-form-wrap input:focus,
+.contact-form-wrap select:focus,
+.contact-form-wrap textarea:focus {
+  border-color: var(--orange) !important;
+  outline: none;
+}
+.contact-form-wrap select option {
+  background: #ffffff;
+  color: #0A1F3D;
+}
 </style>
 </head>
 <body>
@@ -203,7 +226,7 @@
           </div>
           <div class="contact-detail-text">
             <h4>Email</h4>
-            <a href="mailto:tony@whitsundaywebstudio.com">tony@whitsundaywebstudio.com</a>
+            <a href="/cdn-cgi/l/email-protection#f0849f9e89b08798998483859e94918987959283848594999fde939f9d"><span class="__cf_email__" data-cfemail="3c485352457c4b5455484f4952585d454b595e4f4849585553125f5351">[email&#160;protected]</span></a>
           </div>
         </div>
         <div class="contact-detail">
@@ -373,24 +396,8 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-banner">
-  <div class="cta-glow"></div>
-  <div class="cta-glow-left"></div>
-  <div class="cta-inner">
-    <div class="cta-text">
-      <h2>Ready for a proper quote?</h2>
-      <p>Fill in the quote request form and I'll come back with a clear, itemised proposal.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="btn-primary" href="/free-quote.html">Get a free quote</a>
-      <a class="btn-ghost" href="/services.html">View services</a>
-    </div>
-  </div>
-</section>
-
 <div id="footer-placeholder"></div>
-<script src="/wws-components.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/wws-components.js"></script>
 <script>
 // FAQ accordion
 document.querySelectorAll('.faq-question').forEach(btn => {
@@ -419,18 +426,4 @@ if(form){
     try {
       const res = await fetch(form.action, {
         method:'POST',
-        body:data,
-        headers:{'Accept':'application/json'}
-      });
-      if(res.ok){
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }
-    } catch(err){
-      console.error('Form error:', err);
-    }
-  });
-}
-</script>
-</body>
-</html>
+        body:data

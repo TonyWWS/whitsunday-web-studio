@@ -179,6 +179,23 @@
 @media(max-width:480px){
   .budget-options{grid-template-columns:1fr;}
 }
+.quote-reassurance {
+  background: var(--navy-mid);
+  text-align: center;
+  padding: 2rem 5%;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.quote-reassurance p {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+.quote-reassurance a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 500;
+}
+.quote-reassurance a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -400,21 +417,9 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-banner">
-  <div class="cta-glow"></div>
-  <div class="cta-glow-left"></div>
-  <div class="cta-inner">
-    <div class="cta-text">
-      <h2>Prefer to just say hello first?</h2>
-      <p>No problem — send a message and we'll go from there.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="btn-primary" href="/contact.html">Send a message</a>
-      <a class="btn-ghost" href="/services.html">View services</a>
-    </div>
-  </div>
-</section>
+<div class="quote-reassurance">
+  <p>Not ready to commit to a full quote yet? No problem — just <a href="/contact.html">send a message</a> and we'll start from there.</p>
+</div>
 
 <div id="footer-placeholder"></div>
 <script src="/wws-components.js"></script>
