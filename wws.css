@@ -191,7 +191,7 @@ body{
 }
 .hero-img{
   position:absolute;inset:0;
-  background:url('http://whitsundaywebstudio.com/wp-content/uploads/2026/03/hero1-scaled.jpg') center/cover no-repeat;
+  background:url('/hero1.jpg') center/cover no-repeat;
   z-index:0;animation:heroZoom 12s ease-out forwards;
 }
 @keyframes heroZoom{from{transform:scale(1.04);}to{transform:scale(1.0);}}
@@ -346,6 +346,10 @@ footer{background:#060F1E;padding:4rem 5% 2.5rem;border-top:1px solid rgba(255,2
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
 .footer-bottom p{font-size:0.78rem;color:rgba(253,248,243,0.25);}
 .footer-bottom a{color:var(--orange-tint);text-decoration:none;}
+.footer-legal{display:flex;align-items:center;gap:0.6rem;}
+.footer-legal a{font-size:0.78rem;color:rgba(253,248,243,0.25);text-decoration:none;transition:color 0.2s;}
+.footer-legal a:hover{color:var(--orange-tint);}
+.footer-legal span{color:rgba(253,248,243,0.15);font-size:0.7rem;}
 
 /* ============================================================
    FORMS
