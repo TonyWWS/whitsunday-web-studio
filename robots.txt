@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://whitsundaywebstudio.com.au/sitemap.xml
+Sitemap: https://whitsundaywebstudio.com/sitemap.xml
