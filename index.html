@@ -7,18 +7,24 @@
 <meta name="description" content="Boutique web design and development for small businesses across the Whitsundays and North Queensland. Built by someone who understands your industry.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://whitsundaywebstudio.com.au/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Whitsunday Web Studio">
 <meta property="og:title" content="Whitsunday Web Studio — Web Design Airlie Beach">
 <meta property="og:description" content="Boutique web design and development for small businesses across the Whitsundays and North Queensland. Built by someone who understands your industry.">
 <meta property="og:url" content="https://whitsundaywebstudio.com.au/">
-<meta property="og:image" content="https://whitsundaywebstudio.com.au/tony-headshot.png">
+<meta property="og:image" content="https://whitsundaywebstudio.com.au/assets/images/tony-headshot.webp">
+
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Whitsunday Web Studio — Web Design Airlie Beach">
 <meta name="twitter:description" content="Boutique web design and development for small businesses across the Whitsundays and North Queensland.">
-<meta name="twitter:image" content="https://whitsundaywebstudio.com.au/tony-headshot.png">
+<meta name="twitter:image" content="https://whitsundaywebstudio.com.au/assets/images/tony-headshot.webp">
+
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
@@ -29,7 +35,7 @@
   "url": "https://whitsundaywebstudio.com.au",
   "email": "tony@whitsundaywebstudio.com",
   "telephone": "+61402282562",
-  "image": "https://whitsundaywebstudio.com.au/tony-headshot.png",
+  "image": "https://whitsundaywebstudio.com.au/assets/images/tony-headshot.webp",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Airlie Beach",
@@ -53,18 +59,61 @@
   ]
 }
 </script>
+
+<!-- Preload hero image — critical for LCP -->
+<link rel="preload" as="image" href="/assets/images/hero1.webp">
+
+<!-- Self-hosted fonts -->
+<style>
+  @font-face {
+    font-family: 'Agdasima';
+    src: url('/assets/fonts/Agdasima-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+
+<!-- Inter via Google Fonts — preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="/wws.css">
 </head>
 <body>
 
-<div id="nav-placeholder"></div>
+<!-- NAV — inlined for SEO and resilience -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">Whitsunday <span>Web Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/free-quote.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMobile">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/free-quote.html">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img"></div>
+  <div class="hero-img" role="img" aria-label="Aerial view of the Whitsunday Islands"></div>
   <div class="hero-overlay-base"></div>
   <div class="hero-overlay-gradient"></div>
   <div class="hero-accent-top"></div>
@@ -77,32 +126,32 @@
       <a class="btn-primary" href="/free-quote.html">Get a free quote</a>
       <a class="btn-ghost" href="/portfolio.html">See our work</a>
     </div>
-    <div class="hero-trust">
-      <div class="hero-trust-item"><div class="hero-trust-dot"></div>Local expertise</div>
-      <div class="hero-trust-item"><div class="hero-trust-dot"></div>Direct access</div>
-      <div class="hero-trust-item"><div class="hero-trust-dot"></div>Industry experience</div>
-      <div class="hero-trust-item"><div class="hero-trust-dot"></div>Built for results</div>
+    <div class="hero-trust" aria-label="Key points">
+      <div class="hero-trust-item"><div class="hero-trust-dot" aria-hidden="true"></div>Local expertise</div>
+      <div class="hero-trust-item"><div class="hero-trust-dot" aria-hidden="true"></div>Direct access</div>
+      <div class="hero-trust-item"><div class="hero-trust-dot" aria-hidden="true"></div>Industry experience</div>
+      <div class="hero-trust-item"><div class="hero-trust-dot" aria-hidden="true"></div>Built for results</div>
     </div>
   </div>
-  <div class="scroll-hint">
+  <div class="scroll-hint" aria-hidden="true">
     <span>Scroll</span>
     <div class="scroll-arrow"></div>
   </div>
 </section>
 
 <!-- TRUST BAR -->
-<section class="trust-bar">
+<section class="trust-bar" aria-label="Key statistics">
   <div class="trust-inner">
     <div class="trust-stat">
       <div class="number">97%</div>
       <div class="label">of customers check your online presence first</div>
     </div>
-    <div class="trust-divider"></div>
+    <div class="trust-divider" aria-hidden="true"></div>
     <div class="trust-stat">
       <div class="number">81%</div>
       <div class="label">of shoppers research online before they buy</div>
     </div>
-    <div class="trust-divider"></div>
+    <div class="trust-divider" aria-hidden="true"></div>
     <div class="trust-stat">
       <div class="number">5×</div>
       <div class="label">average return on every $1 spent on digital marketing</div>
@@ -121,28 +170,28 @@
     </div>
     <div class="services-grid">
       <a class="service-card" href="/services.html#website-design">
-        <div class="service-icon">
+        <div class="service-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
         <h3>Website Design</h3>
         <p>Clean, mobile-first websites built to impress and convert.</p>
       </a>
       <a class="service-card" href="/services.html#social-media">
-        <div class="service-icon">
+        <div class="service-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </div>
         <h3>Social Media Branding</h3>
         <p>Professional, consistent branding across your social profiles — designed to match your website and strengthen your online presence.</p>
       </a>
       <a class="service-card" href="/services.html#seo">
-        <div class="service-icon">
+        <div class="service-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <h3>SEO Optimisation</h3>
         <p>Get found on Google by the customers already looking for you.</p>
       </a>
       <a class="service-card" href="/services.html#google-business">
-        <div class="service-icon">
+        <div class="service-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <h3>Google Business Profile</h3>
@@ -210,13 +259,21 @@
     </div>
   </div>
 </section>
+
+<!-- ABOUT -->
 <section class="about">
   <div class="about-inner">
     <div class="about-image">
       <div class="about-img-frame">
-        <img src="/chef-tony-1.jpg" alt="Tony Cole — Founder, Whitsunday Web Studio" loading="lazy">
+        <img
+          src="/assets/images/chef-tony-1.webp"
+          alt="Tony Cole — Founder, Whitsunday Web Studio"
+          width="400"
+          height="533"
+          loading="lazy"
+        >
       </div>
-      <div class="about-accent">
+      <div class="about-accent" aria-hidden="true">
         <span class="about-accent-num">20+</span>
         Years in hospitality &amp; tourism
       </div>
@@ -226,12 +283,12 @@
       <h2 class="section-heading">Hi, I'm Tony.</h2>
       <p class="section-body">I've spent most of my life in hospitality, tourism, and small business — working in kitchens, managing teams, and helping operators keep things running smoothly. After moving into IT and web development, I realised something simple: most local businesses don't need a big agency. They need someone who understands the region and the work, and who actually listens.</p>
       <p class="section-body">That's the approach I bring to every project. When you work with me, you deal directly with the person designing and building your site. Clear communication, practical advice, and a focus on what will genuinely help your business — not what looks good on an agency invoice.</p>
-      <div class="credentials">
-        <div class="cred"><div class="cred-dot"></div>20+ years in hospitality &amp; tourism</div>
-        <div class="cred"><div class="cred-dot"></div>Certificates in IT</div>
-        <div class="cred"><div class="cred-dot"></div>Local Whitsunday knowledge</div>
-        <div class="cred"><div class="cred-dot"></div>Practical, results-focused approach</div>
-        <div class="cred"><div class="cred-dot"></div>Direct access and honest communication</div>
+      <div class="credentials" aria-label="Credentials">
+        <div class="cred"><div class="cred-dot" aria-hidden="true"></div>20+ years in hospitality &amp; tourism</div>
+        <div class="cred"><div class="cred-dot" aria-hidden="true"></div>Certificates in IT</div>
+        <div class="cred"><div class="cred-dot" aria-hidden="true"></div>Local Whitsunday knowledge</div>
+        <div class="cred"><div class="cred-dot" aria-hidden="true"></div>Practical, results-focused approach</div>
+        <div class="cred"><div class="cred-dot" aria-hidden="true"></div>Direct access and honest communication</div>
       </div>
       <a class="btn-outline" href="/about.html">Learn more about me</a>
     </div>
@@ -240,8 +297,8 @@
 
 <!-- CTA BANNER -->
 <section class="cta-banner">
-  <div class="cta-glow"></div>
-  <div class="cta-glow-left"></div>
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-glow-left" aria-hidden="true"></div>
   <div class="cta-inner">
     <div class="cta-text">
       <h2>Ready to get started?</h2>
@@ -254,7 +311,53 @@
   </div>
 </section>
 
-<div id="footer-placeholder"></div>
+<!-- FOOTER — inlined for SEO and resilience -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo" href="/">Whitsunday <span>Web Studio</span></a>
+        <p>Boutique web design for hospitality and tourism operators across the Whitsundays and North Queensland.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/tonycolewws" aria-label="LinkedIn profile" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://facebook.com/whitsundaywebstudio" aria-label="Facebook page" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services.html#website-design">Website Design</a></li>
+          <li><a href="/services.html#social-media">Social Media Branding</a></li>
+          <li><a href="/services.html#seo">SEO Optimisation</a></li>
+          <li><a href="/services.html#google-business">Google Business Profile</a></li>
+          <li><a href="/services.html#waas">Website as a Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About Tony</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/free-quote.html">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Whitsunday Web Studio. All rights reserved. Built in Airlie Beach, QLD.</p>
+      <div class="footer-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <span aria-hidden="true">·</span>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script src="/wws-components.js"></script>
 </body>

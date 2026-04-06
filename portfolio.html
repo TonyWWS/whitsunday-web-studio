@@ -1,257 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Whitsunday Web Studio</title>
-<meta name="description" content="Portfolio of web design and development work by Whitsunday Web Studio — boutique web design for Whitsundays hospitality and tourism operators.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://whitsundaywebstudio.com.au/portfolio.html">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Whitsunday Web Studio">
-<meta property="og:title" content="Portfolio — Whitsunday Web Studio">
-<meta property="og:description" content="Portfolio of web design and development work by Whitsunday Web Studio — boutique web design for Whitsundays hospitality and tourism operators.">
-<meta property="og:url" content="https://whitsundaywebstudio.com.au/portfolio.html">
-<meta property="og:image" content="https://whitsundaywebstudio.com.au/tony-headshot.png">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Portfolio — Whitsunday Web Studio">
-<meta name="twitter:description" content="Portfolio of web design and development work by Whitsunday Web Studio — boutique web design for Whitsundays hospitality and tourism operators.">
-<meta name="twitter:image" content="https://whitsundaywebstudio.com.au/tony-headshot.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/wws.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Portfolio — Whitsunday Web Studio</title>
+  <meta name="description" content="Portfolio of web design and development work by Whitsunday Web Studio — boutique web design for Whitsundays hospitality and tourism operators.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://whitsundaywebstudio.com.au/portfolio">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Whitsunday Web Studio">
+  <meta property="og:title" content="Portfolio — Whitsunday Web Studio">
+  <meta property="og:description" content="Portfolio of web design and development work by Whitsunday Web Studio.">
+  <meta property="og:url" content="https://whitsundaywebstudio.com.au/portfolio">
+  <meta property="og:image" content="https://whitsundaywebstudio.com.au/assets/images/tony-headshot.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio — Whitsunday Web Studio">
+  <meta name="twitter:description" content="Portfolio of web design and development work by Whitsunday Web Studio.">
+  <meta name="twitter:image" content="https://whitsundaywebstudio.com.au/assets/images/tony-headshot.webp">
 <style>
-
-/* ── PAGE HERO ─────────────────────────────────── */
-.portfolio-hero {
-  padding: 9rem 5% 5rem;
-  position: relative;
-  overflow: hidden;
-}
-.portfolio-hero::before {
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(212,97,26,0.07) 0%, transparent 70%);
-  pointer-events: none;
-}
-.portfolio-hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.portfolio-hero .section-eyebrow {
-  margin-bottom: 1rem;
-}
-.portfolio-hero h1 {
-  font-family: 'Agdasima', sans-serif;
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  color: var(--white);
-  line-height: 1.0;
-  margin-bottom: 1.25rem;
-}
-.portfolio-hero p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  line-height: 1.85;
-  max-width: 560px;
-}
-
-/* ── PORTFOLIO GRID ────────────────────────────── */
-.portfolio-section {
-  padding: 3rem 5% 6rem;
-}
-.portfolio-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 2rem;
-}
-
-/* ── PROJECT CARD ──────────────────────────────── */
-.project-card {
-  background: var(--navy-mid, #162E52);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 6px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s, border-color 0.2s;
-  text-decoration: none;
-}
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(212,97,26,0.35);
-}
-
-.project-thumb {
-  width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  position: relative;
-  background: #0d1f3a;
-}
-.project-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.4s ease;
-  display: block;
-}
-.project-card:hover .project-thumb img {
-  transform: scale(1.04);
-}
-
-.project-thumb-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #0d1f3a 0%, #162E52 100%);
-}
-
-.project-body {
-  padding: 1.6rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.project-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.85rem;
-}
-.project-tag {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--orange-tint, #D4611A);
-  background: rgba(212,97,26,0.1);
-  border: 1px solid rgba(212,97,26,0.2);
-  padding: 0.25rem 0.65rem;
-  border-radius: 20px;
-}
-.project-name {
-  font-family: 'Agdasima', sans-serif;
-  font-size: 1.6rem;
-  color: var(--white, #fff);
-  line-height: 1.1;
-  margin-bottom: 0.5rem;
-}
-.project-type {
-  font-size: 0.8rem;
-  color: var(--text-muted, #8899aa);
-  margin-bottom: 0.85rem;
-}
-.project-desc {
-  font-size: 0.88rem;
-  color: var(--text-muted, #8899aa);
-  line-height: 1.75;
-  flex: 1;
-  margin-bottom: 1.4rem;
-}
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--orange-tint, #D4611A);
-  text-decoration: none;
-  transition: gap 0.2s;
-}
-.project-link:hover { gap: 0.75rem; }
-.project-link svg { flex-shrink: 0; }
-
-/* ── COMING SOON CARD ──────────────────────────── */
-.project-card-placeholder {
-  background: rgba(255,255,255,0.02);
-  border: 1px dashed rgba(255,255,255,0.1);
-  border-radius: 6px;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 2rem;
-  text-align: center;
-}
-.placeholder-icon {
-  width: 48px; height: 48px;
-  background: rgba(212,97,26,0.08);
-  border: 1px solid rgba(212,97,26,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-.placeholder-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-}
-.placeholder-sub {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.12);
-  line-height: 1.6;
-}
-
-/* ── CTA STRIP ─────────────────────────────────── */
-.portfolio-cta {
-  padding: 4rem 5%;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.portfolio-cta-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.portfolio-cta h3 {
-  font-family: 'Agdasima', sans-serif;
-  font-size: 2rem;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 0.4rem;
-}
-.portfolio-cta p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-.portfolio-cta-actions {
-  display: flex;
-  gap: 1rem;
-  flex-shrink: 0;
-}
-
-@media (max-width: 700px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .portfolio-cta-inner { flex-direction: column; align-items: flex-start; }
-}
+.portfolio-hero{padding:9rem 5% 5rem;position:relative;overflow:hidden;}
+.portfolio-hero::before{content:'';position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(212,97,26,0.07) 0%,transparent 70%);pointer-events:none;}
+.portfolio-hero-inner{max-width:1100px;margin:0 auto;}
+.portfolio-hero h1{font-family:'Agdasima',sans-serif;font-size:clamp(2.8rem,6vw,4.5rem);color:var(--white);line-height:1.0;margin-bottom:1.25rem;}
+.portfolio-hero p{font-size:1rem;color:var(--text-muted);line-height:1.85;max-width:560px;}
+.portfolio-section{padding:3rem 5% 6rem;}
+.portfolio-inner{max-width:1100px;margin:0 auto;}
+.portfolio-grid{display:grid;grid-template-columns:1fr;gap:2rem;}
+@media(min-width:640px){.portfolio-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));}}
+.project-card{background:var(--navy-mid);border:1px solid rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,border-color 0.2s;text-decoration:none;}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(212,97,26,0.35);}
+.project-thumb{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:#0d1f3a;}
+.project-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.4s ease;display:block;}
+.project-card:hover .project-thumb img{transform:scale(1.04);}
+.project-body{padding:1.6rem;flex:1;display:flex;flex-direction:column;}
+.project-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.85rem;}
+.project-tag{font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-tint);background:rgba(212,97,26,0.1);border:1px solid rgba(212,97,26,0.2);padding:0.25rem 0.65rem;border-radius:20px;}
+.project-name{font-family:'Agdasima',sans-serif;font-size:1.6rem;color:var(--white);line-height:1.1;margin-bottom:0.5rem;}
+.project-type{font-size:0.8rem;color:var(--text-muted);margin-bottom:0.85rem;}
+.project-desc{font-size:0.88rem;color:var(--text-muted);line-height:1.75;flex:1;margin-bottom:1.4rem;}
+.project-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange-tint);text-decoration:none;transition:gap 0.2s;min-height:44px;}
+.project-link:hover{gap:0.75rem;}
+.project-card-placeholder{background:rgba(255,255,255,0.02);border:1px dashed rgba(255,255,255,0.1);border-radius:6px;min-height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;padding:2rem;text-align:center;}
+.placeholder-icon{width:48px;height:48px;background:rgba(212,97,26,0.08);border:1px solid rgba(212,97,26,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:0.5rem;}
+.placeholder-label{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.2);}
+.placeholder-sub{font-size:0.8rem;color:rgba(255,255,255,0.12);line-height:1.6;}
+.portfolio-cta{padding:4rem 5%;border-top:1px solid rgba(255,255,255,0.06);}
+.portfolio-cta-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;}
+@media(min-width:700px){.portfolio-cta-inner{flex-direction:row;align-items:center;justify-content:space-between;}}
+.portfolio-cta h3{font-family:'Agdasima',sans-serif;font-size:2rem;color:var(--white);line-height:1.1;margin-bottom:0.4rem;}
+.portfolio-cta p{font-size:0.9rem;color:var(--text-muted);}
+.portfolio-cta-actions{display:flex;gap:1rem;flex-shrink:0;flex-wrap:wrap;}
 </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Agdasima';
+      src: url('/assets/fonts/Agdasima-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="/wws.css">
 </head>
 <body>
-<div id="nav-placeholder"></div>
-
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">Whitsunday <span>Web Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a class="nav-cta" href="/free-quote.html">Get a free quote</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navMobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/free-quote.html">Get a free quote</a></li>
+    </ul>
+  </div>
+</nav>
 <!-- PAGE HERO -->
 <section class="portfolio-hero">
   <div class="portfolio-hero-inner">
@@ -265,16 +107,9 @@
 <section class="portfolio-section">
   <div class="portfolio-inner">
     <div class="portfolio-grid">
-
-      <!-- ANCHOR & VINE -->
       <div class="project-card">
         <div class="project-thumb">
-          <img
-            src="https://anchor-and-vine-demo.vercel.app/hero.jpg"
-            alt="Anchor and Vine — Waterfront Restaurant, Airlie Beach"
-            loading="lazy"
-            onerror="this.style.display='none'"
-          >
+          <img src="https://anchor-and-vine-demo.vercel.app/hero.jpg" alt="Anchor and Vine — Waterfront Restaurant, Airlie Beach" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="project-body">
           <div class="project-tags">
@@ -285,31 +120,22 @@
           <div class="project-name">Anchor &amp; Vine</div>
           <div class="project-type">Waterfront Restaurant · Abel Point Marina, Airlie Beach</div>
           <p class="project-desc">A full-service restaurant website for a waterfront dining venue at Abel Point Marina. Features a seasonal menu, photo gallery, and integrated table reservation system.</p>
-          <a class="project-link" href="https://anchor-and-vine-demo.vercel.app" target="_blank" rel="noopener">
+          <a class="project-link" href="https://anchor-and-vine-demo.vercel.app" target="_blank" rel="noopener noreferrer">
             View live site
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
         </div>
       </div>
-
-      <!-- PLACEHOLDER 2 -->
-      <div class="project-card-placeholder">
-        <div class="placeholder-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(212,97,26,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
+      <div class="project-card-placeholder" aria-label="Coming soon">
+        <div class="placeholder-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(212,97,26,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
         <div class="placeholder-label">Coming soon</div>
         <div class="placeholder-sub">Next project in progress</div>
       </div>
-
-      <!-- PLACEHOLDER 3 -->
-      <div class="project-card-placeholder">
-        <div class="placeholder-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(212,97,26,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
+      <div class="project-card-placeholder" aria-label="Coming soon">
+        <div class="placeholder-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(212,97,26,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
         <div class="placeholder-label">Coming soon</div>
         <div class="placeholder-sub">Next project in progress</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -327,8 +153,46 @@
     </div>
   </div>
 </section>
-
-<div id="footer-placeholder"></div>
-<script src="/wws-components.js"></script>
-</body>
-</html>
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo" href="/">Whitsunday <span>Web Studio</span></a>
+        <p>Boutique web design and development for small businesses across the Whitsundays and North Queensland. Built by someone who actually knows your industry.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/tonycolewws" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://facebook.com/whitsundaywebstudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook page">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services.html#website-design">Website Design</a></li>
+          <li><a href="/services.html#seo">SEO Optimisation</a></li>
+          <li><a href="/services.html#social-media">Social Media Branding</a></li>
+          <li><a href="/services.html#google-business">Google Business Profile</a></li>
+          <li><a href="/services.html">Ongoing Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#0a7e6564734a7d62637e797f646e6b737d6f68797e7f6e636524696567"><span class="__cf_email__" data-cfemail="89fde6e7f0c9fee1e0fdfafce7ede8f0feecebfafdfcede0e6a7eae6e4">[email&#160;protected]</span></a></li>
+          <li><a href="tel:0402282562">0402 282 562</a></li>
+          <li><span style="font-size:0.85rem;color:var(--text-dim);">Airlie Beach, QLD 4802</span></li>
+          <li><a href="/free-quote.html">Get a free quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Whitsunday Web Studio. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="/terms.html">Terms &amp; Conditions</a>
+      </div>
+    
