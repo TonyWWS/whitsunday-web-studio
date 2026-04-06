@@ -32,9 +32,18 @@ body {
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   padding: 0 5%;
+  background: rgba(10,31,61,0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
   transition: background 0.3s, box-shadow 0.3s;
 }
-.nav.scrolled {
+/* Homepage only — transparent nav over hero image, turns solid on scroll */
+.nav.hero-page {
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+.nav.hero-page.scrolled {
   background: rgba(10,31,61,0.97);
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 rgba(255,255,255,0.06);
