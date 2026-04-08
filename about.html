@@ -27,8 +27,8 @@
 @media(min-width:900px){.about-photo-col{flex:1;max-width:none;margin:0;}}
 .about-photo-frame{aspect-ratio:1/1;border:2px solid var(--orange);border-radius:10px;overflow:hidden;}
 .about-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
-.about-stat-col{flex:1.2;display:flex;align-items:center;}
-.about-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;}
+.about-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;}
+@media(min-width:900px){.about-stat-cards{grid-template-columns:1fr;}}
 .about-stat-card{background:var(--navy-mid);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.25rem;text-align:center;}
 .about-stat-card .stat-num{font-family:'Agdasima',sans-serif;font-size:1.8rem;font-weight:700;color:var(--orange);display:block;line-height:1;margin-bottom:0.35rem;}
 .about-stat-card .stat-label{font-size:0.75rem;color:var(--text-dim);line-height:1.4;}
@@ -118,7 +118,10 @@
         <img loading="lazy" src="tony-headshot.webp" alt="Tony Cole — Founder, Whitsunday Web Studio" width="400" height="400">
       </div>
     </div>
-    <div class="about-stat-col">
+    <div class="about-text-col">
+      <p class="section-eyebrow">About your developer</p>
+      <h2>Hi, I'm Tony.</h2>
+      <p class="subtitle">Chef. Retailer. Web developer. Local.</p>
       <div class="about-stat-cards">
         <div class="about-stat-card">
           <span class="stat-num">10+</span>
