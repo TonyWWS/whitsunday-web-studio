@@ -19,16 +19,7 @@
   <meta name="twitter:description" content="20 years in hospitality and tourism. Nearly a decade in the Whitsundays. Tony builds websites for the businesses he actually understands.">
   <meta name="twitter:image" content="https://whitsundaywebstudio.com/tony-headshot.webp">
 <style>
-.about-hero{position:relative;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:6rem 5% 4rem;}
-.about-hero-img{position:absolute;inset:0;background:url('hero3.webp') center/cover no-repeat;z-index:0;}
-.about-hero-overlay-base{position:absolute;inset:0;background:rgba(10,31,61,0.58);z-index:1;}
-.about-hero-overlay-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,31,61,0.25) 0%,rgba(10,31,61,0.05) 35%,rgba(10,31,61,0.05) 55%,rgba(10,31,61,0.80) 100%);z-index:2;}
-.about-hero-accent-top{position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);z-index:10;}
-.about-hero-accent-bottom{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);z-index:10;}
-.about-hero-content{position:relative;z-index:5;max-width:760px;width:100%;}
-.about-hero-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange-tint);margin-bottom:1rem;}
-.about-hero-heading{font-family:'Agdasima',sans-serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.0;color:var(--white);margin-bottom:1rem;}
-.about-hero-sub{font-size:1rem;color:rgba(253,248,243,0.75);line-height:1.75;max-width:520px;margin:0 auto;}
+
 .about-intro{background:var(--navy);padding:5rem 5%;}
 .about-intro-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:3rem;}
 @media(min-width:900px){.about-intro-inner{flex-direction:row;gap:6rem;align-items:start;}}
@@ -36,7 +27,8 @@
 @media(min-width:900px){.about-photo-col{flex:1;max-width:none;margin:0;}}
 .about-photo-frame{aspect-ratio:1/1;border:2px solid var(--orange);border-radius:10px;overflow:hidden;}
 .about-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
-.about-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;}
+.about-stat-col{flex:1.2;display:flex;align-items:center;}
+.about-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;}
 .about-stat-card{background:var(--navy-mid);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.25rem;text-align:center;}
 .about-stat-card .stat-num{font-family:'Agdasima',sans-serif;font-size:1.8rem;font-weight:700;color:var(--orange);display:block;line-height:1;margin-bottom:0.35rem;}
 .about-stat-card .stat-label{font-size:0.75rem;color:var(--text-dim);line-height:1.4;}
@@ -62,7 +54,7 @@
 .about-why-header{text-align:center;margin-bottom:4rem;}
 .why-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;}
 @media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr;}}
-@media(min-width:1024px){.why-grid{grid-template-columns:repeat(3,1fr);gap:1.5rem;}}
+@media(min-width:1024px){.why-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;}}
 .why-card{background:var(--navy-mid);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:2rem;transition:border-color 0.2s,transform 0.2s;}
 .why-card:hover{border-color:rgba(212,97,26,0.3);transform:translateY(-3px);}
 .why-icon{width:48px;height:48px;background:rgba(212,97,26,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;}
@@ -117,19 +109,6 @@
     </ul>
   </div>
 </nav>
-<!-- HERO -->
-<section class="about-hero">
-  <div class="about-hero-img" role="img" aria-label="Scenic Whitsundays backdrop"></div>
-  <div class="about-hero-overlay-base"></div>
-  <div class="about-hero-overlay-gradient"></div>
-  <div class="about-hero-accent-top" aria-hidden="true"></div>
-  <div class="about-hero-accent-bottom" aria-hidden="true"></div>
-  <div class="about-hero-content">
-    <p class="about-hero-eyebrow">The person behind the work</p>
-    <h1 class="about-hero-heading">About Tony</h1>
-    <p class="about-hero-sub">20 years in hospitality and tourism. Nearly a decade in the Whitsundays. Building websites for the businesses I actually understand.</p>
-  </div>
-</section>
 
 <!-- INTRO -->
 <section class="about-intro">
@@ -138,6 +117,8 @@
       <div class="about-photo-frame">
         <img loading="lazy" src="tony-headshot.webp" alt="Tony Cole — Founder, Whitsunday Web Studio" width="400" height="400">
       </div>
+    </div>
+    <div class="about-stat-col">
       <div class="about-stat-cards">
         <div class="about-stat-card">
           <span class="stat-num">10+</span>
@@ -145,7 +126,7 @@
         </div>
         <div class="about-stat-card">
           <span class="stat-num">10+</span>
-          <span class="stat-label">Years in hospitality retail</span>
+          <span class="stat-label">Years in retail</span>
         </div>
         <div class="about-stat-card">
           <span class="stat-num">8</span>
@@ -155,103 +136,6 @@
           <span class="stat-num">Cert III</span>
           <span class="stat-label">Information Technology</span>
         </div>
-      </div>
-    </div>
-    <div class="about-text-col">
-      <p class="section-eyebrow">About your developer</p>
-      <h2>Hi, I'm Tony.</h2>
-      <p class="subtitle">Chef. Hospitality veteran. Web developer. Local.</p>
-      <p>I got into web development because I find it genuinely interesting — more the technical side than the creative, though there's real satisfaction in seeing a finished site come together. After two decades in professional kitchens and hospitality retail, my body started telling me it was done with that life. So I retrained, picked up my Certificate III through TAFE Queensland, and launched Whitsunday Web Studio — bringing nearly a decade of local knowledge and 20 years of hospitality experience to the work.</p>
-      <p>The fact that I can help real businesses, do work I actually enjoy, and not be on my feet for twelve hours — that turned out to be a pretty good combination.</p>
-      <p>When you work with me, you deal directly with the person building your site. No account managers, no handoffs, no one who needs to be briefed on your project. Just me.</p>
-      <div class="about-creds" aria-label="Credentials">
-        <div class="about-cred"><div class="about-cred-dot" aria-hidden="true"></div>20+ years in hospitality &amp; tourism</div>
-        <div class="about-cred"><div class="about-cred-dot" aria-hidden="true"></div>Certificate III in Information Technology</div>
-        <div class="about-cred"><div class="about-cred-dot" aria-hidden="true"></div>Nearly a decade of local Whitsundays knowledge</div>
-        <div class="about-cred"><div class="about-cred-dot" aria-hidden="true"></div>Practical, results-focused approach</div>
-        <div class="about-cred"><div class="about-cred-dot" aria-hidden="true"></div>Direct access and honest communication</div>
-        <div class="about-cred"><div class="about-cred-dot" aria-hidden="true"></div>No outsourcing — all work done personally</div>
-      </div>
-      <a class="btn-primary" href="/free-quote.html">Work with me</a>
-    </div>
-  </div>
-</section>
-
-<!-- STORY -->
-<section class="about-story">
-  <div class="about-story-inner">
-    <h2>How I got here</h2>
-    <div class="story-blocks">
-      <div class="story-block">
-        <div class="story-year">Early career</div>
-        <div class="story-content">
-          <h3>Ten years in professional kitchens</h3>
-          <p>A decade in professional kitchens teaches you things no business course covers — how tight margins really are, how much a single bad review can sting, and how quickly a service can fall apart when the details aren't right. I was in the middle of that every day.</p>
-        </div>
-      </div>
-      <div class="story-block">
-        <div class="story-year">Retail</div>
-        <div class="story-content">
-          <h3>Into hospitality retail</h3>
-          <p>Hospitality retail was a different angle on the same world — customer-facing, stock, staff, and the constant challenge of staying visible in a competitive market. I watched businesses with genuinely great product lose customers to competitors with a better-looking online presence. That stuck with me.</p>
-        </div>
-      </div>
-      <div class="story-block">
-        <div class="story-year">Whitsundays</div>
-        <div class="story-content">
-          <h3>Nearly a decade in the region</h3>
-          <p>Moving to Airlie Beach made it obvious. The Whitsundays is full of brilliant small businesses — cafés, tour operators, accommodation providers — many with no web presence at all, others with sites that look fine but don't do the job. Either way, they're not getting the digital representation they deserve from people who actually understand this market.</p>
-        </div>
-      </div>
-      <div class="story-block">
-        <div class="story-year">Now</div>
-        <div class="story-content">
-          <h3>Whitsunday Web Studio</h3>
-          <p>I retrained through TAFE Queensland, got my Certificate III in IT, and launched Whitsunday Web Studio. No grand plan — just a genuine belief that local hospitality and tourism businesses deserve better digital representation, from someone who actually understands their world.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="about-why">
-  <div class="about-why-inner">
-    <div class="about-why-header">
-      <p class="section-eyebrow">Why it matters</p>
-      <h2 class="section-heading">What makes WWS different</h2>
-      <p class="section-body">There are plenty of web designers. Here's why local hospitality and tourism businesses choose to work with me.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>I understand your industry</h3>
-        <p>I've worked in professional kitchens and hospitality retail for 20 years. I know what a café owner actually needs from a website — not what an agency thinks they need.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>I'm genuinely local</h3>
-        <p>I live in Airlie Beach. I know the Whitsundays market, the seasonal patterns, the local businesses, and the specific challenges of operating in a tourism-driven region.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <h3>Direct access, always</h3>
-        <p>You deal with me personally — not an account manager, not an offshore team. When you call or email, I'm the one who picks up and knows your project.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h3>Transparent pricing</h3>
-        <p>No hidden fees, no surprise invoices. You'll know exactly what you're paying for before any work begins — and exactly what you're getting in return.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-        <h3>Honest advice</h3>
-        <p>If you don't need something, I'll tell you. If there's a cheaper solution that works just as well, I'll recommend it. I'd rather give you good advice than sell you something you don't need.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h3>Modern, coded right</h3>
-        <p>No templates, no bloated page builders. Clean, fast, purpose-built websites that work properly across every device and don't give you headaches down the track.</p>
       </div>
     </div>
   </div>
@@ -265,10 +149,9 @@
       <h2 class="section-heading dark">A few things I believe in</h2>
       <p class="section-body dark">These aren't aspirational statements. They're just how I work — partly because I think it's the right way, partly because reputation in a regional area is everything and I live here.</p>
       <div class="values-list">
-        <div class="value-item"><span class="value-num">01</span><div class="value-text"><h4>Done is better than perfect</h4><p>A live website that works is worth more than a perfect one still being tweaked. I build to completion, get it live, then improve from there.</p></div></div>
-        <div class="value-item"><span class="value-num">02</span><div class="value-text"><h4>Transparency over sales</h4><p>I'd rather lose a job by being honest than win it by overselling. You'll always know what you're getting, what it costs, and why.</p></div></div>
-        <div class="value-item"><span class="value-num">03</span><div class="value-text"><h4>Local businesses deserve quality</h4><p>You shouldn't need a Sydney agency budget to get a great website. The Whitsundays has brilliant small businesses that deserve digital work that matches their quality.</p></div></div>
-        <div class="value-item"><span class="value-num">04</span><div class="value-text"><h4>The relationship matters</h4><p>I want clients who come back. That means doing right by people even when it's inconvenient — because reputation in a regional area is everything.</p></div></div>
+        <div class="value-item"><span class="value-num">01</span><div class="value-text"><h4>Integrity Matters</h4><p>I will always give the best service I can to every client. The size of your budget does not change the quality of the work.</p></div></div>
+        <div class="value-item"><span class="value-num">02</span><div class="value-text"><h4>Strength Through Collaboration</h4><p>There is great opportunity in our region and it is best realised through local cooperation. A rising tide lifts all boats. When local businesses thrive, the whole region benefits.</p></div></div>
+        <div class="value-item"><span class="value-num">03</span><div class="value-text"><h4>Honesty is the Best Policy</h4><p>I'd rather lose a job by being honest than win it by overselling. You'll always know what you're getting, what it costs, and why.</p></div></div>
       </div>
     </div>
     <div class="values-quote">
@@ -277,6 +160,79 @@
     </div>
   </div>
 </section>
+
+<!-- STORY -->
+<section class="about-story">
+  <div class="about-story-inner">
+    <h2>How I got here</h2>
+    <div class="story-blocks">
+      <div class="story-block">
+        <div class="story-year">Early career</div>
+        <div class="story-content">
+          <h3>Ten years in professional kitchens</h3>
+          <p>A decade in professional kitchens teaches you things no business course covers. Tight margins mean every decision counts, consistent results depend on solid procedures, and the consumer is more fickle than most business owners want to admit. I was in the middle of that every day.</p>
+        </div>
+      </div>
+      <div class="story-block">
+        <div class="story-year">Retail</div>
+        <div class="story-content">
+          <h3>Into retail</h3>
+          <p>Retail taught me the value of marketing and the power of exclusivity. A well-positioned product with a strong presence will outsell a better product with a weak one almost every time. It is even more important now, with so many buying decisions made without the customer casting a shadow on your door.</p>
+        </div>
+      </div>
+      <div class="story-block">
+        <div class="story-year">Whitsundays</div>
+        <div class="story-content">
+          <h3>Nearly a decade in the region</h3>
+          <p>The Whitsundays has so many brilliant small businesses, though I have noticed more than a few are getting by with a Google Business Profile and a meagre social media presence. A clean, functional, well-positioned website should not be a luxury. Not only that, it is usually synonymous with a thriving business.</p>
+        </div>
+      </div>
+      <div class="story-block">
+        <div class="story-year">Now</div>
+        <div class="story-content">
+          <h3>Whitsunday Web Studio</h3>
+          <p>I retrained through TAFE Queensland, got my Certificate III in IT, and launched Whitsunday Web Studio. I genuinely believe that local businesses deserve better digital representation. I also believe that providing it locally strengthens our community while proudly showcasing the Whitsundays to the world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY -->
+<section class="about-why">
+  <div class="about-why-inner">
+    <div class="about-why-header">
+      <p class="section-eyebrow">Why it matters</p>
+      <h2 class="section-heading">What makes WWS different</h2>
+      <p class="section-body">There are plenty of web designers. Here's why local hospitality and tourism businesses choose to work with me.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>I'm genuinely local</h3>
+        <p>I live in Airlie Beach. I know the Whitsundays market, the seasonal patterns, the local businesses, and the specific challenges of operating in a tourism-driven region.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Direct access, always</h3>
+        <p>You deal with me personally. Not an account manager, not an offshore team. When you call or email, I'm the one who picks up and knows your project.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Transparent pricing</h3>
+        <p>No hidden fees, no surprise invoices. You'll know exactly what you're paying for before any work begins, and exactly what you're getting in return.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4611A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h3>Honest advice</h3>
+        <p>If you don't need something, I'll tell you. If there's a cheaper solution that works just as well, I'll recommend it. I'd rather give you good advice than sell you something you don't need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- CTA -->
 <section class="cta-banner">
@@ -321,7 +277,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:tony@whitsundaywebstudio.com">tony@whitsundaywebstudio.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#3f4b5051467f4857564b4c4a515b5e46485a5d4c4b4a5b5650115c5052"><span class="__cf_email__" data-cfemail="7f0b1011063f0817160b0c0a111b1e06081a1d0c0b0a1b1610511c1012">[email&#160;protected]</span></a></li>
           <li><a href="tel:0402282562">0402 282 562</a></li>
           <li><span style="font-size:0.85rem;color:var(--text-dim);">Airlie Beach, QLD 4802</span></li>
           <li><a href="/free-quote.html">Get a free quote</a></li>
@@ -331,8 +287,4 @@
     <div class="footer-bottom">
       <p>&copy; 2026 Whitsunday Web Studio. All rights reserved.</p>
       <div class="footer-legal">
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <span aria-hidden="true">&middot;</span>
-        <a href="/terms.html">Terms &amp; Conditions</a>
-      </div>
-    
+        <a href="/privacy-po
